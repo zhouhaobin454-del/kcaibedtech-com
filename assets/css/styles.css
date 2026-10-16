@@ -481,3 +481,4 @@ html,body{overflow-x:hidden}
 @media(max-width:1100px){.about-hero-grid,.product-detail-grid,.contact-grid{grid-template-columns:1fr;gap:36px;}.about-stats-grid{grid-template-columns:1fr 1fr;}.patent-grid-about{grid-template-columns:1fr 1fr;}}
 @media(max-width:800px){.form-row{grid-template-columns:1fr;}.about-hero-media img,.gallery-main img{height:280px;}.factory-photo-grid,.patent-grid-about{grid-template-columns:1fr 1fr;}.about-stat strong{font-size:22px;}.custom-grid{grid-template-columns:1fr 1fr;}.features-grid{grid-template-columns:1fr;}}
 @media(max-width:520px){.factory-photo-grid,.patent-grid-about,.about-stats-grid,.custom-grid{grid-template-columns:1fr;}.product-spec-table{grid-template-columns:1fr;}.product-spec-table div:nth-child(odd){border-right:0;}}
+@media(max-width:680px){.contact-grid{grid-template-columns:minmax(0,1fr)!important;gap:28px;}.contact-grid>*{min-width:0;}.inquiry-form{padding:20px 16px;}.form-row{grid-template-columns:1fr;}}
