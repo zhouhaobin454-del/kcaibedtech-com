@@ -1,13 +1,27 @@
 Options -Indexes
 DirectoryIndex index.html
 
-ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
   # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 301 redirects: old /product/ URLs to new /products/category/ URLs
+  RewriteRule ^product/kd001-a3/?$ /products/adjustable-bed-frames/kd001-a3/ [R=301,L]
+  RewriteRule ^product/kd005-a1/?$ /products/adjustable-bed-frames/kd005-a1/ [R=301,L]
+  RewriteRule ^product/kd008-a1/?$ /products/adjustable-bed-frames/kd008-a1/ [R=301,L]
+  RewriteRule ^product/kd010-a2/?$ /products/adjustable-bed-frames/kd010-a2/ [R=301,L]
+  RewriteRule ^product/kd011-a3/?$ /products/adjustable-bed-frames/kd011-a3/ [R=301,L]
+  RewriteRule ^product/kd004-b1/?$ /products/mattresses/kd004-b1/ [R=301,L]
+  RewriteRule ^product/kr001/?$    /products/smart-beds/kr001/ [R=301,L]
+  RewriteRule ^product/kr002/?$    /products/smart-beds/kr002/ [R=301,L]
+  RewriteRule ^product/kr003/?$    /products/smart-beds/kr003/ [R=301,L]
+  RewriteRule ^product/kr004/?$    /products/smart-beds/kr004/ [R=301,L]
+  RewriteRule ^product/yj001-1/?$  /products/leisure-chairs/yj001-1/ [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>
