@@ -1,3 +1,6 @@
 render.mjs
 .DS_Store
 Thumbs.db
+kfysmart-*.json
+assets/css/kfysmart.css
+assets/js/kfysmart.js

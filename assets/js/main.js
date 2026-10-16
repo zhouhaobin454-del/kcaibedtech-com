@@ -1,113 +1,51 @@
-(function () {
-  // Mobile menu
-  var menuBtn = document.querySelector('.menu-toggle');
-  var nav = document.querySelector('.nav');
-  if (menuBtn && nav) {
-    menuBtn.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    });
-    nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.setAttribute('aria-label', 'Open navigation');
-      });
-    });
-  }
+(()=>{const body=document.body,toggle=document.querySelector('[data-menu-toggle]'),nav=document.querySelector('[data-nav-links]');if(toggle&&nav){const close=()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');body.classList.remove('menu-open')};toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));body.classList.toggle('menu-open',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}
+document.querySelectorAll('.product-gallery').forEach(g=>{const imgs=[...g.querySelectorAll('[data-gallery-image]')],thumbs=[...g.querySelectorAll('[data-gallery-thumb]')],prev=g.querySelector('[data-gallery-prev]'),next=g.querySelector('[data-gallery-next]');let i=0;const show=n=>{i=(n+imgs.length)%imgs.length;imgs.forEach((x,j)=>x.classList.toggle('active',j===i));thumbs.forEach((x,j)=>{x.classList.toggle('active',j===i);x.setAttribute('aria-current',j===i?'true':'false')});thumbs[i]?.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'})};thumbs.forEach((t,n)=>t.addEventListener('click',()=>show(n)));prev?.addEventListener('click',()=>show(i-1));next?.addEventListener('click',()=>show(i+1));g.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});show(0)});
+const filters=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('[data-news-category]')];filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;cards.forEach(c=>c.hidden=f!=='all'&&c.dataset.newsCategory!==f)}));
+const float=document.querySelector('[data-floating-contact]'),floatToggle=document.querySelector('[data-contact-toggle]');floatToggle?.addEventListener('click',()=>{const open=float.classList.toggle('open');floatToggle.setAttribute('aria-expanded',String(open))});
+const heroVideo=document.querySelector('.hero-video');if(heroVideo&&matchMedia('(prefers-reduced-motion: reduce)').matches){heroVideo.removeAttribute('autoplay');heroVideo.removeAttribute('loop');heroVideo.pause()}
+})();
 
-  // Product filter chips (products page)
-  var filters = document.querySelectorAll('[data-filter]');
-  if (filters.length) {
-    // Apply URL category filter on load
-    var params = new URLSearchParams(location.search);
-    var urlCat = params.get('category') || 'all';
-    filters.forEach(function (btn) {
-      if (btn.dataset.filter === urlCat) btn.classList.add('active');
-      else btn.classList.remove('active');
-    });
-    if (urlCat !== 'all') {
-      document.querySelectorAll('#catalog .product-card').forEach(function (card) {
-        card.hidden = card.dataset.category !== urlCat;
-      });
-    }
-    filters.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        filters.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        var cat = btn.dataset.filter;
-        document.querySelectorAll('#catalog .product-card').forEach(function (card) {
-          card.hidden = cat !== 'all' && card.dataset.category !== cat;
-        });
-        var url = new URL(location.href);
-        if (cat === 'all') url.searchParams.delete('category');
-        else url.searchParams.set('category', cat);
-        history.replaceState(null, '', url.toString());
-      });
-    });
-  }
+// Product filter chips
+(function(){
+  var filters=document.querySelectorAll('[data-filter]');
+  if(!filters.length)return;
+  var params=new URLSearchParams(location.search);
+  var urlCat=params.get('category')||'all';
+  filters.forEach(function(b){b.classList.toggle('active',b.dataset.filter===urlCat);});
+  if(urlCat!=='all')document.querySelectorAll('#catalog .product-list-card').forEach(function(c){c.hidden=c.dataset.category!==urlCat;});
+  filters.forEach(function(btn){btn.addEventListener('click',function(){
+    filters.forEach(function(b){b.classList.remove('active');});btn.classList.add('active');
+    var cat=btn.dataset.filter;
+    document.querySelectorAll('#catalog .product-list-card').forEach(function(c){c.hidden=cat!=='all'&&c.dataset.category!==cat;});
+    var u=new URL(location.href);cat==='all'?u.searchParams.delete('category'):u.searchParams.set('category',cat);history.replaceState(null,'',u.toString());
+  });});
+})();
+// Mailto form
+(function(){
+  var form=document.getElementById('inquiry-form');
+  if(!form)return;
+  var interest=sessionStorage.getItem('kc_interest');
+  if(interest){var sel=form.elements.interest;if(sel)for(var i=0;i<sel.options.length;i++)if(sel.options[i].textContent.startsWith(interest)){sel.selectedIndex=i;break;}sessionStorage.removeItem('kc_interest');}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();if(!form.reportValidity())return;
+    if(form.elements.website&&form.elements.website.value)return;
+    var d=new FormData(form);
+    var v={name:d.get('name')||'',email:d.get('email')||'',company:d.get('company')||'—',phone:d.get('phone')||'—',interest:d.get('interest')||'Not specified',qty:d.get('quantity')||'—',msg:d.get('message')||''};
+    var pp=v.interest!=='Not specified'?' — '+v.interest:'';
+    var sub=encodeURIComponent('Website inquiry'+pp);
+    var body=encodeURIComponent('Name: '+v.name+'
+Email: '+v.email+'
+Company: '+v.company+'
+Phone: '+v.phone+'
+Product interest: '+v.interest+'
+Estimated quantity: '+v.qty+'
 
-  // Store product interest for contact form pre-fill
-  document.querySelectorAll('[data-interest]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      sessionStorage.setItem('kc_interest', el.dataset.interest);
-    });
+Message:
+'+v.msg);
+    var st=form.querySelector('.form-status');
+    if(st){st.style.display='block';st.innerHTML='Opening your email client… or <a href="'+B_WA+'">message us on WhatsApp</a>.';}
+    window.location.href='mailto:zhouhaobin454@gmail.com?subject='+sub+'&body='+body;
   });
-
-  // Contact form - mailto fallback (works without a server)
-  var form = document.getElementById('inquiry-form');
-  if (form) {
-    var interest = sessionStorage.getItem('kc_interest');
-    if (interest) {
-      var sel = form.elements.interest;
-      if (sel) {
-        for (var i = 0; i < sel.options.length; i++) {
-          if (sel.options[i].textContent.startsWith(interest)) {
-            sel.selectedIndex = i;
-            break;
-          }
-        }
-      }
-      sessionStorage.removeItem('kc_interest');
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-
-      // Honeypot check
-      var honeypot = form.elements.website;
-      if (honeypot && honeypot.value) return;
-
-      var data = new FormData(form);
-      var name = data.get('name') || '';
-      var email = data.get('email') || '';
-      var company = data.get('company') || '—';
-      var phone = data.get('phone') || '—';
-      var interestVal = data.get('interest') || 'Not specified';
-      var quantity = data.get('quantity') || '—';
-      var message = data.get('message') || '';
-
-      var productPart = interestVal !== 'Not specified' ? ' — ' + interestVal : '';
-      var subject = encodeURIComponent('Website inquiry' + productPart);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Company: ' + company + '\n' +
-        'Phone: ' + phone + '\n' +
-        'Product interest: ' + interestVal + '\n' +
-        'Estimated quantity: ' + quantity + '\n\n' +
-        'Message:\n' + message
-      );
-
-      var status = form.querySelector('.form-result');
-      if (status) {
-        status.style.display = 'block';
-        status.innerHTML = 'Opening your email client… If it doesn\'t open, <a href="mailto:zhouhaobin454@gmail.com">email us directly</a> or <a href="https://wa.me/8613925576475" target="_blank" rel="noopener">message on WhatsApp</a>.';
-      }
-
-      window.location.href = 'mailto:zhouhaobin454@gmail.com?subject=' + subject + '&body=' + body;
-    });
-  }
+  document.querySelectorAll('[data-interest]').forEach(function(el){el.addEventListener('click',function(){sessionStorage.setItem('kc_interest',el.dataset.interest);});});
+  var B_WA='https://wa.me/8613925576475';
 })();
