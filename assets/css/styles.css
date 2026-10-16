@@ -448,6 +448,8 @@ html,body{overflow-x:hidden}
 .privacy-content h2{font-size:22px;font-weight:700;color:var(--navy);margin:32px 0 12px;}
 .privacy-content p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:14px;}
 .privacy-content a{color:var(--blue);}
+/* Footer nav label replaces h2 */
+.footer-nav-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin:0 0 12px;}
 /* Buyer fit in product cards */
 .buyer-fit{font-size:13px;color:var(--muted);margin:8px 0 12px;line-height:1.6;}
 .buyer-fit strong{color:var(--text);font-weight:600;}
