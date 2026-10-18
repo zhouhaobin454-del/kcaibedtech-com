@@ -516,5 +516,10 @@ html,body{overflow-x:hidden}
 .blog-next a{color:var(--blue);}
 .blog-next span{font-weight:600;color:var(--text);margin-right:6px;}
 .page-hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:600px;margin:12px 0 0;}
+/* All-products filter */
+.all-products-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+.filter-btn{padding:8px 18px;border:1px solid var(--line);border-radius:20px;background:var(--white);font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue);}
+.filter-btn.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
 @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.blog-grid{grid-template-columns:1fr;}}
