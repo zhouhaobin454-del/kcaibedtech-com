@@ -376,6 +376,16 @@ html,body{overflow-x:hidden}
 .procurement-note{font-size:12px;color:rgba(255,255,255,.80);margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);}
 @media(max-width:800px){.procurement-grid{grid-template-columns:1fr 1fr;}.procurement-grid article{border-left:0;border-top:1px solid rgba(255,255,255,.12);}.procurement-grid article:nth-child(-n+2){border-top:0;}}
 @media(max-width:520px){.procurement-grid{grid-template-columns:1fr;}.procurement-grid article:first-child{border-top:0;}}
+.procurement-snapshot--light{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.procurement-snapshot--light .procurement-heading .eyebrow{color:var(--blue);}
+.procurement-snapshot--light .procurement-heading h2{color:var(--navy);}
+.procurement-snapshot--light .procurement-grid article{border-left:1px solid var(--line);border-left-color:var(--line);}
+.procurement-snapshot--light .procurement-grid article:first-child{border-left:0;}
+.procurement-snapshot--light .procurement-grid article span{color:var(--blue);}
+.procurement-snapshot--light .procurement-grid article h3{color:var(--navy);}
+.procurement-snapshot--light .procurement-grid article p{color:var(--muted);}
+.procurement-snapshot--light .procurement-note{color:var(--muted);border-top-color:var(--line);}
+@media(max-width:800px){.procurement-snapshot--light .procurement-grid article{border-left:0;border-top:1px solid var(--line);}}
 
 
 /* About page */
