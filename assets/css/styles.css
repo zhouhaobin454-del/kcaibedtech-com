@@ -533,3 +533,106 @@ html,body{overflow-x:hidden}
 .form-alt a{color:var(--blue);}
 /* Focus-visible outline for form inputs */
 .form-group input:focus-visible,.form-group select:focus-visible,.form-group textarea:focus-visible{border-color:var(--blue);outline:2px solid var(--blue);outline-offset:1px;}
+
+/* ── UI/UX Overhaul ─────────────────────────────────────────────────────────── */
+
+/* A1: Typography — tighter headings */
+h1,h2{letter-spacing:-0.02em;}
+h1{line-height:1.15;}
+
+/* A2: Card hover elevation */
+.product-list-card,.blog-card{transition:box-shadow 0.25s ease,transform 0.25s ease;}
+.product-list-card:hover,.blog-card:hover{box-shadow:0 8px 32px rgba(7,20,38,0.12);transform:translateY(-3px);}
+
+/* A3: Button gradient & hover */
+.btn-primary{background:linear-gradient(135deg,var(--blue) 0%,#1648c0 100%);}
+.btn-primary:hover{background:linear-gradient(135deg,#1648c0 0%,#0f3ba8 100%);box-shadow:0 4px 16px rgba(26,86,219,0.35);transform:translateY(-1px);}
+.btn{transition:all 0.2s ease;border-radius:6px;}
+.btn:active{transform:translateY(0);}
+
+/* A4: Section soft gradient */
+.section.soft{background:linear-gradient(180deg,#f8f9fc 0%,#f0f3f8 100%);}
+
+/* A5: Footer refinement */
+.site-footer{border-top:1px solid rgba(255,255,255,0.08);}
+.footer-grid a{transition:color 0.2s,padding-left 0.2s;}
+.footer-grid a:hover{color:var(--ice);padding-left:4px;}
+
+/* A6: Eyebrow inline-block */
+.eyebrow{position:relative;display:inline-block;}
+
+/* A7: Scrolled header */
+.site-header.scrolled{backdrop-filter:blur(12px) saturate(1.5);background:rgba(7,20,38,0.92);}
+
+/* B8: Scroll reveal */
+.reveal-ready{opacity:0;transform:translateY(24px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal-ready.revealed{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none;transition:none;}}
+
+/* B10: Product card image zoom */
+.product-list-image{overflow:hidden;border-radius:var(--radius);}
+.product-list-image img{transition:transform 0.4s ease;}
+.product-list-card:hover .product-list-image img{transform:scale(1.04);}
+
+/* B11: CTA pulse */
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(26,86,219,0.4);}100%{box-shadow:0 0 0 12px rgba(26,86,219,0);}}
+.global-cta .btn-outline-light:hover,.category-cta .btn:hover{animation:pulse-ring 0.6s ease-out;}
+
+/* C13: Mobile nav slide-from-right */
+@media(max-width:768px){
+  .nav-links{transform:translateX(100%);transition:transform 0.3s ease;position:fixed;top:0;right:0;left:auto!important;bottom:auto!important;height:100vh;width:min(320px,85vw);background:var(--navy);padding:80px 32px 32px;flex-direction:column;gap:8px;z-index:200;overflow-y:auto;}
+  .nav-links.nav-open,.nav-links.open{transform:translateX(0);}
+  .nav-links a{font-size:18px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08);color:var(--white);}
+  .nav-products-trigger{color:var(--white);font-size:18px;}
+  .nav-products-menu{display:grid!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;transform:none!important;position:static!important;background:transparent!important;box-shadow:none!important;padding:0 0 0 16px!important;min-width:unset!important;border:none!important;border-radius:0!important;}
+  .nav-products-menu a{font-size:15px;color:rgba(255,255,255,0.75);border-bottom-color:transparent;}
+}
+
+/* C14: Touch-friendly tap targets */
+@media(max-width:768px){
+  .nav-links a,.footer-grid nav a{min-height:44px;display:flex;align-items:center;}
+  .btn{min-height:44px;padding:12px 24px;}
+  .filter-btn{min-height:40px;}
+}
+
+/* C15: Mobile product card */
+@media(max-width:640px){
+  .product-list-card{border-radius:10px;}
+  .product-list-image{border-radius:10px 10px 0 0;}
+  .product-list-image img{height:220px;object-fit:cover;width:100%;}
+}
+
+/* D16: Gallery zoom cursor */
+.gallery-main{border-radius:12px;overflow:hidden;background:#f8f9fc;border:1px solid var(--line);}
+.gallery-main img{cursor:zoom-in;transition:transform 0.4s ease;}
+.gallery-main:hover img{transform:scale(1.03);}
+
+/* D17: Feature list card-style */
+.feature-list{padding:0;}
+.feature-list li{padding:10px 14px;background:#f8f9fc;border-radius:6px;border-left:3px solid var(--blue);margin-bottom:8px;font-size:14px;list-style:none;position:static;}
+.feature-list li::before{display:none;}
+
+/* D18: Spec table hover */
+.product-spec-table{border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.product-spec-table div{transition:background 0.15s;}
+.product-spec-table div:hover{background:#f0f4ff;}
+.product-spec-table strong{color:var(--blue);}
+
+/* D19: Related section background */
+.related-section{background:var(--soft);}
+
+/* D20: Mobile sticky CTA */
+@media(max-width:768px){
+  .product-sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:var(--white);border-top:1px solid var(--line);display:flex;gap:10px;z-index:100;box-shadow:0 -4px 16px rgba(0,0,0,0.08);}
+  .product-sticky-cta a{flex:1;text-align:center;}
+  body.has-product-sticky{padding-bottom:72px;}
+}
+
+/* E21: Image load shimmer */
+img{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;}
+img.loaded{background:none;}
+
+/* E22: Back to top button */
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);border:none;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:all 0.3s ease;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.back-to-top.visible{opacity:1;transform:translateY(0);}
+.back-to-top:hover{background:var(--blue);}

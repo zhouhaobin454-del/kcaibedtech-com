@@ -49,3 +49,15 @@ Message:
   document.querySelectorAll('[data-interest]').forEach(function(el){el.addEventListener('click',function(){sessionStorage.setItem('kc_interest',el.dataset.interest);});});
   var B_WA='https://wa.me/8613925576475';
 })();
+// Scrolled header blur
+(function(){var hdr=document.querySelector('[data-site-header]');if(!hdr)return;window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});})();
+// Scroll reveal
+(function(){var els=document.querySelectorAll('.product-list-card,.blog-card,.category-card,.section-head,.feature-card,.custom-card,.about-stat');if(!els.length||!window.IntersectionObserver)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){el.classList.add('reveal-ready');obs.observe(el);});})();
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+// Image load shimmer removal
+document.querySelectorAll('img').forEach(function(img){if(img.complete)img.classList.add('loaded');else img.addEventListener('load',function(){img.classList.add('loaded');});});
+// Back to top
+(function(){var b=document.querySelector('[data-back-top]');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>400);},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
+// Mobile nav-open sync (works alongside kfyJs open class)
+(function(){var nav=document.querySelector('[data-nav-links]');var btn=document.querySelector('[data-menu-toggle]');if(!btn||!nav)return;btn.addEventListener('click',function(){nav.classList.toggle('nav-open');});})();
