@@ -886,6 +886,27 @@ img.loaded{background:none;}
 /* Hero responsive */
 @media(max-width:860px){.pd-hero-grid{grid-template-columns:1fr;}.pd-gallery{order:-1;}}
 @media(max-width:560px){.pd-hero{padding:28px 0 40px;}}
+/* Buyer Guides section */
+.cat-guides-grid{grid-template-columns:repeat(3,1fr);}
+.cat-guides-grid .feature-card h3{font-size:14px;}
+.cat-guides-grid .feature-card h3 a{color:var(--navy);text-decoration:none;}
+.cat-guides-grid .feature-card h3 a:hover{color:var(--blue);}
+.procurement-guides{margin-top:36px;padding-top:28px;border-top:1px solid var(--line);}
+.procurement-guides h3{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 12px;}
+.procurement-guides ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 24px;}
+.procurement-guides li{display:flex;align-items:center;gap:6px;}
+.procurement-guides li::before{content:'→';color:var(--blue);font-size:13px;}
+.procurement-guides a{color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;}
+.procurement-guides a:hover{color:var(--blue);}
+@media(max-width:860px){.cat-guides-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.cat-guides-grid{grid-template-columns:1fr;}}
+/* About page: Global Markets grid */
+.about-markets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.about-market{padding:24px;border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);background:rgba(255,255,255,.05);}
+.about-market h3{font-size:15px;font-weight:700;color:var(--ice);margin:0 0 8px;}
+.about-market p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.65;margin:0;}
+@media(max-width:860px){.about-markets-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.about-markets-grid{grid-template-columns:1fr;}}
 /* Home hero background reel */
 .home-hero .hero-carousel{aspect-ratio:32/15;}
 .hero-bg-reel{position:absolute;inset:0;overflow:hidden;}
