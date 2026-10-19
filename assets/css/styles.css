@@ -918,6 +918,15 @@ img.loaded{background:none;}
 @keyframes hbgFade{0%{opacity:1}26%{opacity:1}33%{opacity:0}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.hbg-1,.hbg-2,.hbg-3{animation:none;}.hbg-2,.hbg-3{display:none;}.hbg-1{opacity:1;}}
 @media(max-width:800px){.home-hero .hero-carousel{aspect-ratio:auto;min-height:clamp(720px,125vw,960px);}.hbg img{object-position:center bottom;}}
+/* Blog article: Further Reading cross-links */
+.article-further-reading{background:var(--soft);padding:40px 0;}
+.article-fr-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+.article-fr-card{display:flex;flex-direction:column;gap:6px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);text-decoration:none;color:inherit;transition:box-shadow .2s,transform .15s;}
+.article-fr-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08);transform:translateY(-2px);}
+.article-fr-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);}
+.article-fr-card strong{font-size:14px;font-weight:700;color:var(--navy);}
+.article-fr-card span:last-child{font-size:13px;color:var(--muted);line-height:1.55;}
+@media(max-width:700px){.article-fr-links{grid-template-columns:1fr;}}
 /* About: Product Solutions grid */
 .about-solutions-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px;}
 .about-solution-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s;}
