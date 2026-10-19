@@ -680,6 +680,10 @@
     (function(){
       var btns = document.querySelectorAll('.filter-btn');
       var cards = document.querySelectorAll('#all-products-grid [data-category]');
+      var params = new URLSearchParams(location.search);
+      var urlCat = params.get('category') || 'all';
+      btns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === urlCat); });
+      if (urlCat !== 'all') cards.forEach(function(c){ c.style.display = c.dataset.category === urlCat ? '' : 'none'; });
       btns.forEach(function(btn){
         btn.addEventListener('click', function(){
           btns.forEach(function(b){b.classList.remove('active');});
@@ -688,6 +692,9 @@
           cards.forEach(function(card){
             card.style.display = (f==='all' || card.dataset.category===f) ? '' : 'none';
           });
+          var u = new URL(location.href);
+          f === 'all' ? u.searchParams.delete('category') : u.searchParams.set('category', f);
+          history.replaceState(null, '', u.toString());
         });
       });
     })();
