@@ -475,6 +475,17 @@ html,body{overflow-x:hidden}
 /* OEM customization grid */
 .custom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .custom-card{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);}
+/* Category procurement 6-col grid */
+.cat-proc-grid{grid-template-columns:repeat(6,1fr)!important;}
+.cat-proc-grid article div{flex:1;}
+.procurement-before-quote{font-size:12px;color:rgba(255,255,255,.7);margin-top:12px;padding-top:0;border-top:0;font-style:italic;}
+/* Pack & Logistics */
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.pack-card{padding:28px;background:var(--soft);border-radius:var(--radius);border:1px solid var(--line);}
+.pack-card h3{font-size:15px;font-weight:700;color:var(--navy);margin:0 0 10px;}
+.pack-card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0;}
+@media(max-width:860px){.cat-proc-grid{grid-template-columns:repeat(3,1fr)!important;}.pack-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.cat-proc-grid{grid-template-columns:repeat(2,1fr)!important;}.pack-grid{grid-template-columns:1fr;}}
 /* Category FAQ accordion */
 .cat-faq-list{display:flex;flex-direction:column;gap:0;max-width:860px;margin:0 auto;}
 .cat-faq-item{border-bottom:1px solid var(--line);}
