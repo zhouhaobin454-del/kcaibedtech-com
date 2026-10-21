@@ -936,11 +936,10 @@ img.loaded{background:none;}
 .hero-bg-reel{position:absolute;inset:0;overflow:hidden;}
 .hbg{position:absolute;inset:0;opacity:0;}
 .hbg picture,.hbg img{display:block;width:100%;height:100%;object-fit:cover;object-position:right center;}
-.hbg-1{opacity:1;animation:hbgFade 21s linear infinite 0s;}
-.hbg-2{animation:hbgFade 21s linear infinite 7s;}
-.hbg-3{animation:hbgFade 21s linear infinite 14s;}
-@keyframes hbgFade{0%{opacity:1}26%{opacity:1}33%{opacity:0}100%{opacity:0}}
-@media(prefers-reduced-motion:reduce){.hbg-1,.hbg-2,.hbg-3{animation:none;}.hbg-2,.hbg-3{display:none;}.hbg-1{opacity:1;}}
+.hbg-1{opacity:1;animation:hbgFade 14s linear infinite 0s;}
+.hbg-2{animation:hbgFade 14s linear infinite 7s;}
+@keyframes hbgFade{0%{opacity:1}43%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.hbg-1,.hbg-2{animation:none;}.hbg-2{display:none;}.hbg-1{opacity:1;}}
 /* P1: Hero split — left dark text zone, right fully transparent so product image shows */
 .hero-overlay{background:linear-gradient(90deg,rgba(2,11,24,.95) 0%,rgba(2,11,24,.90) 35%,rgba(2,11,24,.40) 58%,rgba(2,11,24,.0) 80%);}
 .hero-copy{width:min(42vw,580px);}
