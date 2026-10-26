@@ -135,7 +135,7 @@
 .kc-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .kc-field { display: block; color: #162337; font-size: .83rem; font-weight: 700; }
 .kc-field-full { grid-column: 1 / -1; }
-.kc-field input, .kc-field select, .kc-field textarea { width: 100%; margin-top: 8px; padding: 14px 15px; border: 1px solid #cdd7e2; border-radius: 10px; color: var(--kc-ink); background: #fff; font: inherit; font-weight: 400; }
+.kc-field input, .kc-field select, .kc-field textarea { width: 100%; margin-top: 8px; padding: 14px 15px; border: 1px solid #cdd7e2; border-radius: 10px; color: var(--kc-ink); background: #fff; font: inherit; font-size: 16px; font-weight: 400; }
 .kc-field textarea { min-height: 160px; resize: vertical; }
 .kc-field input:focus, .kc-field select:focus, .kc-field textarea:focus { outline: 3px solid rgba(47,124,215,.15); border-color: var(--kc-blue); }
 .kc-consent { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; color: var(--kc-muted); font-size: .8rem; line-height: 1.5; }
@@ -229,3 +229,9 @@
   .kc-proof-card img { height: 300px; }
   .kc-form-actions .kc-btn { width: 100%; }
 }
+
+/* Touch targets: at least 44px tall on every viewport */
+.kc-card-link, .kc-inline-link { display: inline-flex; align-items: center; min-height: 44px; }
+.brand, .footer-brand { min-height: 44px; }
+.mobile-toggle { min-width: 44px; min-height: 44px; }
+footer a { display: flex; align-items: center; min-height: 44px; }
