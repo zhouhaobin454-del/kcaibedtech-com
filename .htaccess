@@ -10,6 +10,9 @@ ErrorDocument 404 /404.html
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+  # Legacy contact page had no working form handler; send visitors to the live inquiry form
+  RewriteRule ^contact/?$ /contact.html [R=301,L,QSA]
+
   # 301 redirects: old /product/ URLs to new /products/category/ URLs
   RewriteRule ^product/kd001-a3/?$ /products/adjustable-bed-frames/kd001-a3/ [R=301,L]
   RewriteRule ^product/kd005-a1/?$ /products/adjustable-bed-frames/kd005-a1/ [R=301,L]
