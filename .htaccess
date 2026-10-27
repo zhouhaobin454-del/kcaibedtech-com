@@ -12,6 +12,10 @@ ErrorDocument 404 /404.html
 
   # Legacy contact page had no working form handler; send visitors to the live inquiry form
   RewriteRule ^contact/?$ /contact.html [R=301,L,QSA]
+  # Legacy pages that now have a rebuilt equivalent: consolidate to the new URLs
+  RewriteRule ^about/?$ /about.html [R=301,L,QSA]
+  RewriteRule ^products/?$ /products.html [R=301,L,QSA]
+  RewriteRule ^privacy/?$ /privacy-policy.html [R=301,L,QSA]
 
   # 301 redirects: old /product/ URLs to new /products/category/ URLs
   RewriteRule ^product/kd001-a3/?$ /products/adjustable-bed-frames/kd001-a3/ [R=301,L]

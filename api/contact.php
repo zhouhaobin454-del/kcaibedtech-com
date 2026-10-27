@@ -26,9 +26,15 @@ if (!is_array($data)) {
     respond(400, ['ok' => false, 'message' => 'Invalid JSON.']);
 }
 
-$clean = static function (string $key, int $max) use ($data): string {
+$clean = static function (string $key, int $max, bool $multiline = false) use ($data): string {
     $value = trim((string)($data[$key] ?? ''));
     $value = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value) ?? '';
+    if ($multiline) {
+        $value = preg_replace('/\r\n?/', "\n", $value) ?? '';
+    } else {
+        // Single-line fields end up in mail headers: collapse every line break so nothing can inject headers.
+        $value = trim(preg_replace('/[\r\n\t\x{0085}\x{2028}\x{2029}]+/u', ' ', $value) ?? '');
+    }
     return function_exists('mb_substr') ? mb_substr($value, 0, $max) : substr($value, 0, $max);
 };
 
@@ -44,7 +50,7 @@ $interest = $clean('productInterest', 100);
 $product = $clean('specificProduct', 100);
 $quantity = $clean('estimatedQuantity', 100);
 $phone = $clean('phone', 50);
-$message = $clean('message', 3000);
+$message = $clean('message', 3000, true);
 $consent = (bool)($data['privacyAgreement'] ?? false);
 
 $allowedInterests = ['Adjustable Bed Frames', 'Smart Beds', 'Adjustable Mattresses', 'Leisure Chairs', 'Bed Bases', 'OEM / ODM Project'];
@@ -66,7 +72,8 @@ if ($last > 0 && ($now - $last) < 15) {
 }
 @file_put_contents($rateFile, (string)$now, LOCK_EX);
 
-$subject = 'Website inquiry: ' . $interest . ' — ' . $company;
+$subjectPlain = 'Website inquiry: ' . $interest . ' - ' . $company;
+$subject = function_exists('mb_encode_mimeheader') ? mb_encode_mimeheader($subjectPlain, 'UTF-8', 'B', "\r\n") : $subjectPlain;
 $body = implode("\n", [
     'New B2B inquiry from kcaibedtech.com',
     '',
