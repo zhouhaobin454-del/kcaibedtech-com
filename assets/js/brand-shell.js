@@ -32,7 +32,7 @@
         </div>
         <div><h2>Products</h2><a href="products.html#adjustable-frames">Adjustable Bed Frames</a><a href="products.html#smart-beds">Smart Beds</a><a href="products.html#mattresses">Adjustable Mattresses</a><a href="products.html#leisure-chairs">Leisure Chairs</a><a href="products.html#bed-bases">Bed Bases</a></div>
         <div><h2>Company</h2><a href="about.html">About</a><a href="news.html">News</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
-        <div><h2>Start a Project</h2><a href="mailto:zhouhaobin454@gmail.com">zhouhaobin454@gmail.com</a><a href="https://wa.me/8613925576475" target="_blank" rel="noopener">+86 139 2557 6475</a><span>Qisha Industrial Park, Shatian Town<br>Dongguan, Guangdong, China</span></div>
+        <div><h2>Start a Project</h2><a href="mailto:zhouhaobin454@gmail.com">zhouhaobin454@gmail.com</a><a href="https://wa.me/8619065020180" target="_blank" rel="noopener">+86 190 6502 0180</a><span>Qisha Industrial Park, Shatian Town<br>Dongguan, Guangdong, China</span></div>
       </div>
       <div class="kc-container copyright"><span>© 2026 Kang Cai Smart Sleep Co., Ltd.</span><span>OEM / ODM · Global B2B</span></div>`;
   }
@@ -41,7 +41,7 @@
   if (floating) {
     floating.innerHTML = `
       <button class="floating-toggle" data-contact-toggle aria-expanded="false" aria-label="Open contact options">+</button>
-      <div class="floating-links"><a href="https://wa.me/8613925576475" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">WA</a><a href="mailto:zhouhaobin454@gmail.com" aria-label="Send email">@</a></div>`;
+      <div class="floating-links"><a href="https://wa.me/8619065020180" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">WA</a><a href="mailto:zhouhaobin454@gmail.com" aria-label="Send email">@</a></div>`;
   }
 
   const interest = document.querySelector('#productInterest');
