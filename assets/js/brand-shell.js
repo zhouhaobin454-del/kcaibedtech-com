@@ -61,4 +61,8 @@
       interest.value = 'OEM / ODM Project';
     }
   }
+
+  const requestedModel = new URLSearchParams(location.search).get('model');
+  const specificProduct = document.querySelector('[name="specificProduct"]');
+  if (requestedModel && specificProduct) specificProduct.value = requestedModel.slice(0, 100);
 })();
