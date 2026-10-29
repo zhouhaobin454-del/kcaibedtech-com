@@ -69,6 +69,15 @@
 .kc-legacy .article-quick-answer { margin: 0 0 28px; padding: 20px 24px; background: var(--kc-cream); border-left: 4px solid var(--kc-gold); border-radius: 10px; }
 .kc-legacy .quick-answer-label, .kc-legacy .toc-label { color: #8a5f10; font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .kc-legacy .article-quick-answer p { margin: 6px 0 0; color: var(--kc-ink); }
+.kc-legacy .article-quick-answer ul { margin: 10px 0 0; padding-left: 20px; }
+.kc-legacy .article-quick-answer li { margin: 6px 0; color: var(--kc-ink); line-height: 1.65; }
+.kc-legacy .kc-table-wrap { margin: 0 0 8px; overflow-x: auto; border: 1px solid var(--kc-line); border-radius: 12px; background: #fff; }
+.kc-legacy .kc-table-wrap table { min-width: 560px; }
+.kc-legacy .kc-table-wrap thead th { background: var(--kc-cream); color: #8a5f10; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+.kc-legacy .kc-table-wrap tbody th { color: var(--kc-ink); font-weight: 700; }
+.kc-legacy .kc-table-wrap tbody tr:last-child th, .kc-legacy .kc-table-wrap tbody tr:last-child td { border-bottom: 0; }
+.kc-legacy .article-faq h3 { margin: 22px 0 6px; font-size: 1.08rem; }
+.kc-legacy .article-faq p { margin: 0; }
 .kc-legacy .blog-content { font-size: 1.04rem; }
 .kc-legacy .blog-content p, .kc-legacy .blog-content li { line-height: 1.8; color: #26374d; }
 .kc-legacy .blog-content h2 { margin: 44px 0 14px; font-size: 2rem; }

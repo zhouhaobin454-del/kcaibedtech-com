@@ -8,7 +8,7 @@ import vm from 'node:vm';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const shellCode = readFileSync(join(root, 'assets/js/brand-shell.js'), 'utf8');
-const CSS_VERSION = '13';
+const CSS_VERSION = '14';
 const SKIP = new Set(['404.html', 'about/index.html', 'contact/index.html', 'privacy/index.html', 'products/index.html']);
 const LEGACY = /^(blog|faq|sourcing)\//;
 const SCRIPTLESS = new Set(['contact.html']); // pages that still need brand-shell.js (form prefill)
