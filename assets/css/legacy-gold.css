@@ -119,3 +119,7 @@
 .kc-legacy main .btn-outline-light, .kc-legacy main .btn-ghost-light { color: #fff; }
 .kc-legacy main .sourcing-article-card h3 a, .kc-legacy main .article-fr-card, .kc-legacy main .article-toc a { color: inherit; }
 .kc-legacy main .article-toc a { color: var(--kc-muted); }
+.kc-legacy .blog-figure { margin: 8px 0 28px; }
+.kc-legacy .blog-figure img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.kc-legacy .blog-figure figcaption { margin-top: 8px; color: var(--kc-muted); font-size: .85rem; line-height: 1.5; }
+.kc-legacy .blog-figure-portrait { max-width: 340px; margin-left: auto; margin-right: auto; }

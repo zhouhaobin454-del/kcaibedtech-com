@@ -352,3 +352,11 @@ footer a { display: flex; align-items: center; min-height: 44px; }
 .kc-video-feature p:not(.kc-kicker) { margin: 0; color: var(--kc-muted); line-height: 1.75; }
 .kc-video-feature .kc-btn-secondary { color: var(--kc-ink); background: transparent; border: 1px solid var(--kc-ink); }
 .kc-video-feature .kc-btn-secondary:hover { color: #fff; background: var(--kc-ink); }
+
+/* Factory photo gallery */
+.kc-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.kc-photo-grid figure { position: relative; margin: 0; overflow: hidden; border-radius: 18px; background: #101c2c; aspect-ratio: 4 / 3; }
+.kc-photo-grid img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.kc-photo-grid figcaption { position: absolute; left: 14px; bottom: 14px; max-width: calc(100% - 28px); padding: 7px 12px; border-radius: 999px; color: #fff; background: rgba(5,15,31,.78); font-size: .75rem; font-weight: 700; backdrop-filter: blur(8px); }
+@media (max-width: 900px) { .kc-photo-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .kc-photo-grid { grid-template-columns: 1fr; } }
