@@ -16,6 +16,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^about/?$ /about.html [R=301,L,QSA]
   RewriteRule ^products/?$ /products.html [R=301,L,QSA]
   RewriteRule ^privacy/?$ /privacy-policy.html [R=301,L,QSA]
+  RewriteRule ^blog/?$ /news.html [R=301,L,QSA]
 
   # 301 redirects: old /product/ URLs to new /products/category/ URLs
   RewriteRule ^product/kd001-a3/?$ /products/adjustable-bed-frames/kd001-a3/ [R=301,L]
@@ -38,4 +39,20 @@ ErrorDocument 404 /404.html
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Performance: compress text assets and let browsers cache static files
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 10 minutes"
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType video/mp4 "access plus 6 months"
 </IfModule>
