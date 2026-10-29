@@ -308,3 +308,7 @@ footer a { display: flex; align-items: center; min-height: 44px; }
 .kc-pd-page h1, .kc-pd-page h2 { font-variant-numeric: lining-nums; }
 @media (max-width: 900px) { .kc-pd-hero-grid { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 600px) { .kc-pd-keyspecs, .kc-pd-snap-grid, .kc-pd-features, .kc-pd-related, .kc-pd-steps { grid-template-columns: minmax(0, 1fr); } }
+.kc-pd-listing { margin-top: 0; }
+.kc-pd-related-media { aspect-ratio: 16 / 10; display: flex; align-items: center; }
+.kc-pd-related-media picture { width: 100%; height: 100%; }
+.kc-pd-related-media img { height: 100%; object-fit: contain; }

@@ -28,7 +28,10 @@ ErrorDocument 404 /404.html
   RewriteRule ^product/kr002/?$    /products/smart-beds/kr002/ [R=301,L]
   RewriteRule ^product/kr003/?$    /products/smart-beds/kr003/ [R=301,L]
   RewriteRule ^product/kr004/?$    /products/smart-beds/kr004/ [R=301,L]
-  RewriteRule ^product/yj001-1/?$  /products/leisure-chairs/yj001-1/ [R=301,L]
+  RewriteRule ^product/yj001-1/?$  /products/leisure-chairs/yj001-a01/ [R=301,L]
+  RewriteRule ^products/leisure-chairs/yj001-1/?$ /products/leisure-chairs/yj001-a01/ [R=301,L]
+  RewriteRule ^products/leisure-chairs/yj001-3/?$ /products/leisure-chairs/yj001-a01/ [R=301,L]
+  RewriteRule ^products/leisure-chairs/yj002-1/?$ /products/leisure-chairs/yj001-a02/ [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>
