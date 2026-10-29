@@ -169,7 +169,13 @@ function render(s) {
         <dl class="kc-pd-specs">
           ${specsOf(s).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${val(v)}</dd></div>`).join('\n          ')}
         </dl>
-      </div>
+${s.variants ? `        <h3 class="kc-pd-subhead">Size variants and packing</h3>
+        <div class="kc-pd-table-wrap"><table class="kc-pd-table">
+          <thead><tr><th scope="col">Size</th><th scope="col">Product size</th><th scope="col">Net weight</th><th scope="col">Gross weight</th><th scope="col">Carton size</th></tr></thead>
+          <tbody>${s.variants.map((r) => `<tr>${r.map((c, i) => `<${i ? 'td' : 'th scope="row"'}>${esc(c)}</${i ? 'td' : 'th'}>`).join('')}</tr>`).join('')}</tbody>
+        </table></div>
+        <p class="kc-pd-footnote kc-pd-note">Weights and carton sizes are from production packing data and vary by size and configuration. Other sizes: ${FALLBACK.toLowerCase()}.</p>
+` : ''}      </div>
     </section>
 
     <section class="kc-section" aria-labelledby="pd-steps-title">

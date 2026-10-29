@@ -84,7 +84,7 @@ export const skus = [
     ],
   }),
   frame({
-    model: 'KD001-A3', name: 'Fixed Electric Bed Frame',
+    model: 'KD001-A3', variants: [['2000 × 900 mm','2000 × 900 × 270 mm','48.2 kg','52.9 kg','2050 × 950 × 200 mm'],['2000 × 1100 mm','2000 × 1100 × 270 mm','54 kg','59 kg','2050 × 1150 × 200 mm']], name: 'Fixed Electric Bed Frame',
     lead: 'A fixed-structure electric bed frame offered for US-style bed sizes, with a padded sponge surface.',
     structure: 'Fixed', dims: '2000 × 900 mm', sizes: US_SIZES, clearance: 'Floor clearance 27 cm',
     materials: 'High-quality steel; surface padding 1 cm blue super sponge + 1 cm hard white sponge',
@@ -161,7 +161,7 @@ export const skus = [
   }),
 
   mattress({
-    model: 'KD004-B1', name: 'Electric Mattress',
+    model: 'KD004-B1', variants: [['Queen 60" × 78" (about 1524 × 1981 mm)','—','90.5 kg','99.4 kg','2020 × 1560 × 330 mm'],['King 72" × 78" (about 1829 × 1981 mm)','—','104.5 kg','114.7 kg','2020 × 1860 × 330 mm']], name: 'Electric Mattress',
     lead: 'A full-wrap, split-head electric mattress that sits on a compatible bed board, with independent backrest and leg rest lift.',
     structure: 'Full-wrap split-head; placed on a bed board', dims: '2000 × 900 × 280 mm (side height 250 mm)', sizes: US_SIZES + ' (catalog nominal sizes)',
     angles: 'Backrest 0–55°; leg rest 0–35°', motor: 'Two motors; German OKIN motor (Haojiang optional)',
@@ -262,7 +262,7 @@ export const skus = [
   bed({ model: 'KR004', name: 'Leather Upholstered Bed Frame', lead: 'A leather-upholstered smart bed frame (2000 × 1500 mm) paired with the KD003-B1 electric mattress.', dims: '2000 × 1500 mm', pair: 'KD003-B1' }),
 
   chair({
-    model: 'YJ001-A01', name: 'Yoga Chair A01',
+    model: 'YJ001-A01', variants: [['Super-fiber leather version','700 × 1900 × 460 mm','58.1 kg','66 kg','1950 × 750 × 520 mm']], name: 'Yoga Chair A01',
     lead: 'A powered zero-gravity yoga recliner with V-shaped lift support for the waist and a one-touch yoga mode.',
     options: 'Dotted or striped stitching; catalog numbers YJ001-1 (technology leather) and YJ001-3 (top-grain half-leather)',
     features: [

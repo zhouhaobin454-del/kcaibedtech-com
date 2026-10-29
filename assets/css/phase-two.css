@@ -312,3 +312,10 @@ footer a { display: flex; align-items: center; min-height: 44px; }
 .kc-pd-related-media { aspect-ratio: 16 / 10; display: flex; align-items: center; }
 .kc-pd-related-media picture { width: 100%; height: 100%; }
 .kc-pd-related-media img { height: 100%; object-fit: contain; }
+.kc-pd-subhead { margin: 40px 0 16px; color: var(--kc-ink); font-size: 1.15rem; }
+.kc-pd-table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--kc-line); border-radius: 16px; }
+.kc-pd-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: .93rem; }
+.kc-pd-table th, .kc-pd-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--kc-line); color: var(--kc-ink); }
+.kc-pd-table thead th { color: var(--kc-muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.kc-pd-table tbody tr:last-child > * { border-bottom: 0; }
+.kc-pd-note { color: var(--kc-muted); }
