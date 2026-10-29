@@ -99,8 +99,20 @@ $headers = [
     'MIME-Version: 1.0',
 ];
 
+// Keep a backup copy outside the public web root so an inquiry is never lost if mail() fails or lands in spam.
+$saved = false;
+$docRoot = isset($_SERVER['DOCUMENT_ROOT']) ? rtrim((string)$_SERVER['DOCUMENT_ROOT'], '/\\') : '';
+$logDir = $docRoot !== '' ? dirname($docRoot) : '';
+if ($logDir !== '' && is_dir($logDir) && is_writable($logDir)) {
+    $entry = json_encode([
+        'time' => gmdate('c'), 'name' => $name, 'email' => $email, 'company' => $company, 'country' => $country,
+        'interest' => $interest, 'model' => $product, 'quantity' => $quantity, 'phone' => $phone, 'message' => $message,
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    $saved = $entry !== false && @file_put_contents($logDir . DIRECTORY_SEPARATOR . 'kangcai-inquiries.log', $entry . "\n", FILE_APPEND | LOCK_EX) !== false;
+}
+
 $sent = mail('zhouhaobin454@gmail.com', $subject, $body, implode("\r\n", $headers));
-if (!$sent) {
+if (!$sent && !$saved) {
     respond(500, ['ok' => false, 'message' => 'Email delivery failed.']);
 }
 
