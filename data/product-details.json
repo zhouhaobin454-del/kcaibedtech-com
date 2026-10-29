@@ -1,0 +1,88 @@
+{
+  "common": {
+    "faq": [
+      {
+        "q": "What are the typical MOQ and lead time?",
+        "a": "Standard MOQ is from 20 pcs and typical production lead time is around 45 days, subject to model, configuration and order quantity. Final terms are confirmed at the quotation stage."
+      },
+      {
+        "q": "Which compliance documents are available?",
+        "a": "Available test reports and compliance documentation vary by product and destination market. Contact Kang Cai to confirm which documents are available for your program and market."
+      },
+      {
+        "q": "What branding can be applied?",
+        "a": "OEM branding can be applied to product labels, the wireless remote, outer cartons and documentation. Specific options are confirmed by model and program."
+      },
+      {
+        "q": "What should I provide before quotation?",
+        "a": "Your target market, required size, estimated quantity, upholstery and control preferences, plug and voltage, and the delivery date you need."
+      }
+    ],
+    "steps": [
+      ["Define the specification", "Size, upholstery, motor and control."],
+      ["Check compatibility", "Mattress, frame and electrical requirements."],
+      ["Build and inspect", "Production, quality control and pre-shipment inspection."],
+      ["Ship", "Export documents, loading plan and delivery support."]
+    ]
+  },
+  "models": {
+    "KR001": { "name": "Leather Upholstered Bed Frame", "image": "kr001-catalog", "blurb": "A leather-upholstered smart bed frame paired with the KD001-B1 integrated electric mattress." },
+    "KR002": { "name": "Breathable Smart Adjustable Bed", "image": "kr002-catalog", "blurb": "An AI smart bed with a 3D breathable mattress, Q-bounce cotton and independent pocket springs." },
+    "KR003": { "name": "Split-Head Smart Adjustable Bed", "image": "kr003-catalog", "blurb": "Left/right independent head lift with graphene Q-bounce cotton and honeycomb aluminum support." },
+    "KR004": { "name": "Natural Latex Smart Adjustable Bed", "image": "kr004-catalog", "blurb": "A king-size AI smart bed with a natural latex mattress and independent pocket springs." }
+  },
+  "details": {
+    "KR001": {
+      "id": "kr001",
+      "model": "KR001",
+      "cat": "smart-beds",
+      "catLabel": "Smart Beds",
+      "name": "Leather Upholstered Bed Frame",
+      "level": "Standard",
+      "seoTitle": "KR001 Leather Upholstered Smart Bed Frame | OEM/ODM | Kang Cai",
+      "description": "KR001 leather-upholstered smart bed frame (2000 × 1800 mm) paired with the KD001-B1 integrated electric mattress. OEM/ODM from Kang Cai, Dongguan, China.",
+      "lead": "A leather-upholstered smart bed frame (2000 × 1800 mm) paired with the KD001-B1 integrated electric mattress.",
+      "bestFor": "Contemporary bedroom ranges requiring a complete, clean integrated smart bed design.",
+      "image": "kr001-catalog",
+      "imageAlt": "Leather Upholstered Bed Frame KR001",
+      "keySpecs": [
+        ["Structure / material", "Leather upholstered frame"],
+        ["Available sizes", "2000 × 1800 mm"],
+        ["Motor / drive", "Optional OKIN or Haojiang motor"],
+        ["Control options", "Wireless or wired remote; voice and APP control optional"]
+      ],
+      "snapshot": [
+        ["MOQ", null],
+        ["Lead time", null],
+        ["Motor", "OKIN / Haojiang (optional)"],
+        ["Motor warranty", null],
+        ["Product format", "Upholstered frame + KD001-B1 mattress"],
+        ["OEM / ODM", "Available, confirmed per project"]
+      ],
+      "features": [
+        ["Adjustable positions", "Backrest lift 0–55° and leg rest lift 0–35°."],
+        ["Integrated bed system", "Leather-upholstered frame (2000 × 1800 mm) with the KD001-B1 mattress (2000 × 1800 × 500 mm, side height 300 mm)."],
+        ["Mattress construction", "Knitted fabric (three-in-one quilting), natural latex and high-density sponge."],
+        ["Motors and durability", "Optional OKIN or Haojiang motor; lifting system endurance tested to 10,000+ cycles."],
+        ["Control options", "Wireless or wired remote, with voice control and APP control available."],
+        ["Comfort extras", "Vibration massage, LED lights and USB ports are available."]
+      ],
+      "specs": [
+        ["Model", "KR001"],
+        ["Product level", "Standard"],
+        ["Product name", "Leather Upholstered Bed Frame"],
+        ["Structure / material", "Leather upholstered frame"],
+        ["Mattress pairing", "KD001-B1 integrated electric mattress (2000 × 1800 × 500 mm, side height 300 mm)"],
+        ["Motor / drive", "Optional OKIN or Haojiang motor"],
+        ["Adjustment angles", "Backrest 0–55°; leg rest 0–35°"],
+        ["Optional functions", "Voice control, APP control, vibration massage, LED lights, USB ports"],
+        ["Available sizes", "2000 × 1800 mm"],
+        ["Control options", "Wireless or wired remote"],
+        ["Customization", null],
+        ["Application", "Home, senior care, hotels and projects"]
+      ],
+      "related": ["KR002", "KR003", "KR004"],
+      "next": "KR002"
+    }
+  }
+}
