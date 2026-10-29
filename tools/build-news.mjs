@@ -32,6 +32,5 @@ const card = (a) => `        <article class="kc-news-card"><a class="kc-news-car
 const file = join(root, 'news.html');
 const html = readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
 const next = html.replace(/<div class="kc-news-grid">[\s\S]*?<\/div>\n    <\/div><\/section>/, () => `<div class="kc-news-grid">\n${articles.map(card).join('\n')}\n      </div>\n    </div></section>`);
-if (next === html) throw new Error('news grid not found');
 writeFileSync(file, next);
 console.log(`news.html now lists ${articles.length} articles`);

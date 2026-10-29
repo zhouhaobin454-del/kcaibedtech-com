@@ -17,6 +17,15 @@ ErrorDocument 404 /404.html
   RewriteRule ^products/?$ /products.html [R=301,L,QSA]
   RewriteRule ^privacy/?$ /privacy-policy.html [R=301,L,QSA]
   RewriteRule ^blog/?$ /news.html [R=301,L,QSA]
+  RewriteRule ^blog/adjustable-bed-base-bed-frame-compatibility/?$ /blog/adjustable-frame-mattress-fit-checklist/ [R=301,L]
+  RewriteRule ^blog/adjustable-bed-base-manufacturer-china-b2b-guide/?$ /blog/choosing-adjustable-bed-factory-china/ [R=301,L]
+  RewriteRule ^blog/adjustable-bed-base-oem-sampling-b2b-guide/?$ /blog/adjustable-frame-sample-approval-checklist/ [R=301,L]
+  RewriteRule ^blog/adjustable-bed-base-rfq-checklist-b2b-guide/?$ /blog/writing-an-adjustable-frame-rfq/ [R=301,L]
+  RewriteRule ^blog/adjustable-bed-features-b2b-guide/?$ /blog/adjustable-bed-functions-for-buyers/ [R=301,L]
+  RewriteRule ^blog/split-king-vs-king-adjustable-bed-bases/?$ /blog/split-king-or-king-frame-sizing/ [R=301,L]
+  RewriteRule ^blog/wall-hugger-adjustable-bed-base-b2b-guide/?$ /blog/wall-hugger-frame-buyer-notes/ [R=301,L]
+  RewriteRule ^blog/why-are-adjustable-bed-bases-so-heavy/?$ /blog/why-adjustable-frames-weigh-so-much/ [R=301,L]
+  RewriteRule ^blog/zero-clearance-adjustable-bed-base-b2b-guide/?$ /blog/zero-clearance-frame-buyer-notes/ [R=301,L]
 
   # 301 redirects: old /product/ URLs to new /products/category/ URLs
   RewriteRule ^product/kd001-a3/?$ /products/adjustable-bed-frames/kd001-a3/ [R=301,L]
