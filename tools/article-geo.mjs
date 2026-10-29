@@ -50,7 +50,7 @@ export const geo = {
   'canton-fair-2025-recap': {
     takeaways: [
       'Kang Cai exhibited at the 138th Canton Fair (October 15–19, 2025, Guangzhou), booth 4.2A08 in Hall 4.2.',
-      'The booth showed 15+ live models across four categories: KR smart beds, KD electric frames, KD electric mattresses and YJ yoga chairs.',
+      'The booth showed live models across four categories: KR smart beds, KD electric frames, KD electric mattresses and YJ yoga chairs.',
       'The exhibit presented Kang Cai as an OEM and ODM manufacturer, with a consultation zone for buyers.',
     ],
     faq: [
