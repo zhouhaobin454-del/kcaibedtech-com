@@ -72,6 +72,31 @@ function specsOf(s) {
   return rows.filter(([k, v]) => v || needed.has(k));
 }
 
+function faqOf(s) {
+  const pair = s.pair && byModel[s.pair];
+  const join = (...parts) => parts.filter(Boolean).join(' ');
+  const electrical = s.cat === 'bases' ? '' : 'Plug type and voltage are configured for the destination country.';
+  const sizes = s.sizes ? `Listed sizes: ${s.sizes}.` : `Size shown: ${s.dims}.`;
+  const compat = {
+    frames: ['Which mattresses can I use with it?', 'A powered base needs a mattress that flexes with the backrest and leg lift, such as foam, latex or a flexible hybrid. Send us the mattress type and thickness and we will confirm the fit before you order.'],
+    mattresses: ['How does it fit with a bed frame or board?', join(s.structure ? `Structure: ${s.structure}.` : '', pair ? `It is shown with the ${pair.model} bed frame.` : '', 'Send your bed board or frame size and we will confirm the fit.')],
+    beds: ['What is included in the set?', pair && `The leather upholstered frame (${s.dims}) is shown with the ${pair.model} electric mattress (${pair.dims}). Details of what is supplied per order are confirmed in the quotation.`],
+    chairs: ['What materials and finishes are available?', join(s.materials ? `${s.materials}.` : '', s.options ? `${s.options}.` : '', 'Other finishes are confirmed on request.')],
+    bases: ['Which mattresses suit a slatted base?', 'Slat spacing and mattress type both affect support. Share the mattress type and the sizes you need and we will confirm the slat layout.'],
+  }[s.cat];
+  const src = pair && s.cat === 'beds' ? pair : s;
+  const options = s.cat === 'bases'
+    ? ['What materials and construction are used?', s.materials ? `${s.materials}. Structure: ${s.structure}.` : `Structure: ${s.structure}. ${FALLBACK}.`]
+    : ['Which motor, control and function options are available?', join(src.motor ? `${src.motor}.` : '', src.control ? `${src.control}.` : '', src.functions ? `${src.functions}.` : '') || `${FALLBACK}.`];
+  return [
+    ...common.faq,
+    { q: 'Which sizes and markets does it suit?', a: join(sizes, electrical, 'Tell us your target market and we will confirm the exact size and specification.') },
+    { q: compat[0], a: compat[1] },
+    { q: options[0], a: options[1] },
+    { q: 'How is it packed and shipped?', a: join('Export packing and the loading plan are confirmed per order.', s.variants ? 'Carton sizes and weights for the listed sizes are in the table above.' : 'Carton size, weight and container loading quantity for this model are available on request.') },
+  ];
+}
+
 function relatedOf(s) {
   const peers = all.filter((p) => p.cat === s.cat && p.model !== s.model);
   const idx = all.filter((p) => p.cat === s.cat).findIndex((p) => p.model === s.model);
@@ -85,6 +110,7 @@ function render(s) {
   const pageUrl = `${SITE}${urlOf(s)}`;
   const title = `${s.model} ${s.name} | OEM/ODM | Kang Cai`;
   const desc = `${s.lead} OEM/ODM from Kang Cai, Dongguan, China.`;
+  const faqs = faqOf(s);
   const ld = [{
     '@context': 'https://schema.org', '@type': 'Product', name: `${s.model} ${s.name}`, sku: s.model, description: s.lead,
     image: `${SITE}/images/products/${imgOf(s)}.jpg`, brand: { '@type': 'Brand', name: 'Kang Cai' }, category: s.catInfo.label,
@@ -115,6 +141,7 @@ function render(s) {
   <link rel="stylesheet" href="assets/css/phase-one.css">
   <script type="application/ld+json">${JSON.stringify(ld[0])}</script>
   <script type="application/ld+json">${JSON.stringify(ld[1])}</script>
+  <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
 </head>
 <body class="kc-pd-page">
   <header class="site-header" data-site-header></header>
@@ -191,7 +218,7 @@ ${s.variants ? `        <h3 class="kc-pd-subhead">Size variants and packing</h3>
       <div class="kc-container">
         <div class="kc-section-head"><div><p class="kc-kicker">Buyer Questions</p><h2 id="pd-faq-title">${esc(s.model)} B2B buyer questions</h2></div></div>
         <div class="kc-pd-faq">
-          ${common.faq.map((f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n          ')}
+          ${faqs.map((f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n          ')}
         </div>
       </div>
     </section>
