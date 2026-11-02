@@ -317,17 +317,15 @@ ${groups.map((g, i) => `
 if (!only) {
   const groups = Object.values(CATS).map((cat) => ({ cat, items: all.filter((s) => s.catInfo === cat) }));
   const intros = {
-    'adjustable-bed-frames': 'Electric adjustable bed frames from Kang Cai: split, fixed, wall hugger, hanging and five-zone designs for OEM and ODM programs.',
-    'smart-beds': 'Leather-upholstered smart bed frames from Kang Cai, each paired with an integrated electric mattress.',
+    'adjustable-bed-frames': 'Electric adjustable bed frames from Kang Cai: split and fixed designs for OEM and ODM programs.',
     mattresses: 'Electric and adjustable mattresses from Kang Cai with independent backrest and leg rest lift.',
     'leisure-chairs': 'Powered zero-gravity yoga chairs from Kang Cai for wellness, lifestyle and hospitality ranges.',
-    'bed-bases': 'Slatted bed bases from Kang Cai in fiberglass, solid wood, poplar and rubber-cup constructions.',
   };
   for (const g of groups) {
     const dir = join(root, 'products', g.cat.slug);
     writeFileSync(join(dir, 'index.html'), renderListing({ path: `/products/${g.cat.slug}/`, title: `${g.cat.label} | OEM/ODM | Kang Cai`, h1: g.cat.label, intro: intros[g.cat.slug], groups: [g] }));
     console.log('wrote', `products/${g.cat.slug}/index.html`);
   }
-  writeFileSync(join(root, 'products/all/index.html'), renderListing({ path: '/products/all/', title: 'All Products | OEM/ODM Smart Sleep | Kang Cai', h1: 'All Products', intro: 'All 34 Kang Cai models across adjustable bed frames, adjustable mattresses, smart beds, leisure chairs and bed bases.', groups }));
+  writeFileSync(join(root, 'products/all/index.html'), renderListing({ path: '/products/all/', title: 'All Products | OEM/ODM Smart Sleep | Kang Cai', h1: 'All Products', intro: 'All 7 Kang Cai models across adjustable bed frames, adjustable mattresses and leisure chairs.', groups }));
   console.log('wrote products/all/index.html');
 }
