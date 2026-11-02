@@ -362,3 +362,8 @@ footer a { display: flex; align-items: center; min-height: 44px; }
 @media (max-width: 560px) { .kc-photo-grid { grid-template-columns: 1fr; } }
 .kc-video-grid--single { grid-template-columns: minmax(0, 640px); }
 .kc-video-more { margin-top: 18px; }
+.kc-exhibit-grid { column-count: 3; column-gap: 18px; }
+.kc-exhibit-grid figure { break-inside: avoid; margin: 0 0 18px; }
+.kc-exhibit-grid img { display: block; width: 100%; height: auto; border-radius: 14px; }
+@media (max-width: 820px) { .kc-exhibit-grid { column-count: 2; } }
+@media (max-width: 520px) { .kc-exhibit-grid { column-count: 1; } }
