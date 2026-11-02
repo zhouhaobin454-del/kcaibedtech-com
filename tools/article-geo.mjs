@@ -50,12 +50,12 @@ export const geo = {
   'canton-fair-2025-recap': {
     takeaways: [
       'Kang Cai exhibited at the 138th Canton Fair (October 15–19, 2025, Guangzhou), booth 4.2A08 in Hall 4.2.',
-      'The booth showed live models across four categories: KR smart beds, KD electric frames, KD electric mattresses and YJ yoga chairs.',
+      'The booth showed live models across three categories: KD electric frames, KD electric mattresses and YJ yoga chairs.',
       'The exhibit presented Kang Cai as an OEM and ODM manufacturer, with a consultation zone for buyers.',
     ],
     faq: [
       ['When and where did Kang Cai exhibit in 2025?', 'At the 138th Canton Fair in Guangzhou, October 15–19, 2025, booth 4.2A08 in Hall 4.2.'],
-      ['Which products were on display?', 'KR smart beds (KR001–KR004), KD electric frames (KD001-A3, KD001-A6, KD005-A1, KD008-A1, KD010-A2, KD011-A3), KD electric mattresses (KD001-B2, KD002-B1, KD003-B1, KD004-B1) and YJ yoga chairs (YJ001-A01, YJ001-A02).'],
+      ['Which products were on display?', 'KD electric frames (KD001-A3, KD010-A2, KD011-A3), KD electric mattresses (KD003-B1, KD004-B1) and YJ yoga chairs (YJ001-A01, YJ001-A02).'],
       ['Where is Kang Cai based?', 'Kang Cai Smart Sleep Co., Ltd. operates from Shatian Town, Dongguan, Guangdong Province, China.'],
     ],
   },
@@ -78,30 +78,9 @@ export const geo = {
       'Motors are optional German OKIN or Haojiang; other sizes are available on request.',
     ],
     faq: [
-      ['Which KD frames were shown at the 2025 Canton Fair?', 'KD001-A3, KD001-A6, KD005-A1, KD008-A1, KD010-A2 and KD011-A3.'],
+      ['Which KD frames were shown at the 2025 Canton Fair?', 'KD001-A3, KD010-A2 and KD011-A3.'],
       ['What adjustment range does the KD010-A2 offer?', 'Backrest 0–60° and leg rest 0–40°, with a 10,000+ cycle endurance test listed.'],
       ['What motor and slat options do KD frames have?', 'The motor is optional German OKIN or Haojiang. KD010-A2 offers 15/18 mm eco-friendly multi-layer plywood or a honeycomb aluminum panel.'],
-    ],
-  },
-  'kr-series-smart-beds-canton-fair-2025': {
-    takeaways: [
-      'The KR series pairs a leather-upholstered frame with an integrated electric mattress from the KD range; there are four models, KR001 to KR004.',
-      'KR003 uses the KD002-B1 motion mattress with left / right independent backrest lift; KR004 uses the KD003-B1 with natural latex and two motors.',
-      'Adjustment data from the paired mattresses: backrest 0–55° and leg rest 0–35°. Motors are optional German OKIN or Haojiang.',
-    ],
-    table: {
-      head: ['Model', 'Frame size', 'Paired mattress', 'Notes'],
-      rows: [
-        ['KR001', '2000 × 1800 mm', 'KD001-B1 (2000 × 1800 × 500 mm)', 'Lifting system endurance test of 10,000+ cycles listed'],
-        ['KR002', '2000 × 1800 mm', 'KD001-B2 (2000 × 1800 × 530 mm)', 'Breathable 3D material, pocket springs'],
-        ['KR003', '2000 × 1800 mm', 'KD002-B1 motion mattress', 'Left / right independent backrest lift'],
-        ['KR004', '2000 × 1500 mm', 'KD003-B1', 'Natural latex, two motors'],
-      ],
-    },
-    faq: [
-      ['What is the KR series?', 'Kang Cai’s smart bed collection: four leather-upholstered frames, each paired with an electric mattress from the KD range.'],
-      ['Which KR model has independent left and right adjustment?', 'KR003, shown with the KD002-B1 motion mattress, which has left / right independent backrest lift.'],
-      ['What control options are available on KR beds?', 'Wired or wireless remote control, with voice and APP control available as options.'],
     ],
   },
   'smart-sleep-trends-canton-fair-2025': {
@@ -125,7 +104,7 @@ export const geo = {
     faq: [
       ['What should I ask a manufacturer at the Canton Fair?', 'A factory inspection certificate, production capacity (units per month), quality management documentation, and references from existing OEM clients in your target market.'],
       ['What motor options does Kang Cai offer?', 'A standard in-house motor (10,000+ cycle endurance tested) and an optional German OKIN or Haojiang motor on KD frames and mattresses.'],
-      ['What should I include in a follow-up inquiry?', 'Your target category (adjustable frame, smart bed or leisure chair), destination market, size requirements and estimated annual volume.'],
+      ['What should I include in a follow-up inquiry?', 'Your target category (adjustable frame, mattress or leisure chair), destination market, size requirements and estimated annual volume.'],
     ],
   },
   'split-king-or-king-frame-sizing': {
@@ -148,26 +127,6 @@ export const geo = {
       ['What is the difference between a King and a Split King adjustable base?', 'A King base is a single platform that adjusts as one unit. A Split King is two Twin XL adjustable bases side by side, each adjusting completely independently.'],
       ['Who buys Split King?', 'Mostly the premium residential market: couples whose sleeping preferences diverge, consumers with specific comfort requirements for one partner, and premium sleep or direct-to-consumer brands.'],
       ['What should I consider when procuring Split King?', 'Minimum order quantities, whether you need two Twin XL mattresses, the extra shipping volume per bed, and whether controls are independent, synchronized or hybrid.'],
-    ],
-  },
-  'wall-hugger-frame-buyer-notes': {
-    takeaways: [
-      'On a wall hugger base the platform slides forward as the head section rises, so the sleeper stays in roughly the same horizontal position relative to the bedside.',
-      'Specify wall hugger for mid-to-premium retail and furniture-set programs; standard bases suit programs led by cost efficiency.',
-      'Kang Cai lists KD001-A7 and KD004-A3 as wall hugger frames, in 2000 × 1800, 1500 and 900 mm sizes.',
-    ],
-    table: {
-      head: ['', 'Standard base', 'Wall hugger base'],
-      rows: [
-        ['When the head rises', 'Platform tilts from a fixed pivot; the sleeper moves back and up, away from the bedside table', 'Platform slides forward; the upper body rises but stays in about the same horizontal position'],
-        ['Bedside reach', 'Lamp, water or phone move out of easy reach', 'Remains natural through the adjustment range'],
-        ['Best fit', 'Programs where cost efficiency is the main driver', 'Mid-to-premium retail, furniture brand partnerships, complete furniture sets'],
-      ],
-    },
-    faq: [
-      ['What is a wall hugger adjustable bed?', 'A base where the mattress platform slides forward as the head section rises, so the sleeper’s position relative to the bedside stays roughly the same.'],
-      ['When should a program specify wall hugger?', 'For mid-to-premium retail programs, furniture brand partnerships, and markets where bedroom furniture is bought as a complete package.'],
-      ['Which Kang Cai frames are wall hugger?', 'KD001-A7 (adds a surround frame) and KD004-A3 (metal-plate bed surface), both listed in 2000 × 1800, 1500 and 900 mm sizes.'],
     ],
   },
   'why-adjustable-frames-weigh-so-much': {

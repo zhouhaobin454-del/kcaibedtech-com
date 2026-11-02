@@ -122,7 +122,7 @@ writeFileSync(smPath, sm);
 const lines = [
   '# Kang Cai Smart Sleep',
   '',
-  '> Kang Cai Smart Sleep Co., Ltd. is an OEM / ODM manufacturer of adjustable bed frames, smart beds, adjustable mattresses, leisure chairs and bed bases for global brands, distributors and project buyers. Based in Shatian Town, Dongguan, Guangdong, China. The site is written for B2B buyers; unpublished specification values are shown as "Contact us for details".',
+  '> Kang Cai Smart Sleep Co., Ltd. is an OEM / ODM manufacturer of adjustable bed frames, adjustable mattresses and leisure chairs for global brands, distributors and project buyers. Based in Shatian Town, Dongguan, Guangdong, China. The site is written for B2B buyers; unpublished specification values are shown as "Contact us for details".',
   '',
   '## Products',
   ...Object.values(CATS).map((c) => `- [${c.label}](${SITE}/products/${c.slug}/): ${c.bestFor}`),
