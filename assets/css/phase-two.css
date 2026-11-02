@@ -360,3 +360,5 @@ footer a { display: flex; align-items: center; min-height: 44px; }
 .kc-photo-grid figcaption { position: absolute; left: 14px; bottom: 14px; max-width: calc(100% - 28px); padding: 7px 12px; border-radius: 999px; color: #fff; background: rgba(5,15,31,.78); font-size: .75rem; font-weight: 700; backdrop-filter: blur(8px); }
 @media (max-width: 900px) { .kc-photo-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .kc-photo-grid { grid-template-columns: 1fr; } }
+.kc-video-grid--single { grid-template-columns: minmax(0, 640px); }
+.kc-video-more { margin-top: 18px; }
