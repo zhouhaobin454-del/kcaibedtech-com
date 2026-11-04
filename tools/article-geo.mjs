@@ -185,4 +185,17 @@ export const geo = {
       ['What should I ask my supplier about clearance?', 'How much rear clearance is needed at maximum head lift, whether the mechanism is zero-clearance, wall hugger or both, whether it applies to all sizes, and whether it affects noise or motor load.'],
     ],
   },
+  'how-adjustable-bed-frames-are-made': {
+    modified: '2026-11-04',
+    takeaways: [
+      'Board parts are cut on a CNC router run from a touchscreen with dust extraction; a panel saw handles straight cuts.',
+      'Steel frames are assembled flat on a padded workbench, with brackets and linkage parts fastened by power tools.',
+      'The clips do not cover motor fitting, load testing, final inspection or packing. Ask any supplier for those separately.',
+    ],
+    faq: [
+      ['How is an adjustable bed frame made?', 'Board parts are cut on a CNC router and panel saw, steel frame sections are assembled on a workbench with brackets and fasteners, and the surface is covered. Motor fitting, testing and packing follow; these clips do not show them.'],
+      ['What machine cuts the boards?', 'A MARS CNC router, controlled from a touchscreen and fitted with dust extraction. A sliding table panel saw handles straight cuts.'],
+      ['Can I see the Kang Cai workshop?', 'Narrated clips and photos are on the factory page. To ask about a visit or a video call, contact the team.'],
+    ],
+  },
 };
