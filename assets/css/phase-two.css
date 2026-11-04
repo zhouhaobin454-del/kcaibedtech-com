@@ -367,3 +367,7 @@ footer a { display: flex; align-items: center; min-height: 44px; }
 .kc-exhibit-grid img { display: block; width: 100%; height: auto; border-radius: 14px; }
 @media (max-width: 820px) { .kc-exhibit-grid { column-count: 2; } }
 @media (max-width: 520px) { .kc-exhibit-grid { column-count: 1; } }
+.blog-content figure { margin: 24px 0; }
+.blog-content video, .blog-content figure img { display: block; width: 100%; height: auto; border-radius: 12px; background: #101c2c; }
+.blog-content figure video { aspect-ratio: 16 / 9; }
+.blog-content figcaption { margin-top: 8px; font-size: .85rem; color: var(--muted); }

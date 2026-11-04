@@ -60,6 +60,7 @@ const articles = [];
 for (const slug of slugs) {
   const file = join(root, 'blog', slug, 'index.html');
   const g = geo[slug];
+  const modified = g.modified || MODIFIED;
   let html = readFileSync(file, 'utf8');
   const eol = html.includes('\r\n') ? '\r\n' : '\n';
   html = html.replace(/\r\n/g, '\n');
@@ -88,7 +89,7 @@ for (const slug of slugs) {
   const words = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
   html = html.replace(/<script type="application\/ld\+json">(\{"@context":"https:\/\/schema\.org","@type":"BlogPosting"[\s\S]*?)<\/script>/, (_, json) => {
     const post = JSON.parse(json);
-    post.dateModified = MODIFIED;
+    post.dateModified = modified;
     post.inLanguage = 'en';
     post.articleSection = section;
     post.wordCount = words;
@@ -98,12 +99,13 @@ for (const slug of slugs) {
 
   // modified date: meta tag and visible byline
   html = html.replace(/\n  <meta property="article:modified_time" content="[^"]*">/, '');
-  html = html.replace(/(<meta property="article:published_time" content="[^"]*">)/, `$1\n  <meta property="article:modified_time" content="${MODIFIED}">`);
-  html = html.replace(/(<p class="blog-meta">By [^<]*· Published <time datetime="[^"]*">[^<]*<\/time>)(?: · Updated <time[^>]*>[^<]*<\/time>)?/, `$1 · Updated <time datetime="${MODIFIED}">${longDate(MODIFIED)}</time>`);
+  html = html.replace(/(<meta property="article:published_time" content="[^"]*">)/, `$1\n  <meta property="article:modified_time" content="${modified}">`);
+  html = html.replace(/(<p class="blog-meta">By [^<]*· Published <time datetime="[^"]*">[^<]*<\/time>)(?: · Updated <time[^>]*>[^<]*<\/time>)?/, `$1 · Updated <time datetime="${modified}">${longDate(modified)}</time>`);
 
   writeFileSync(file, html.replace(/\n/g, eol));
   articles.push({
     slug,
+    modified,
     title: unesc((html.match(/<h1>([\s\S]*?)<\/h1>/) || [])[1] || slug).replace(/<[^>]+>/g, '').trim(),
     desc: unesc((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || ''),
   });
@@ -112,9 +114,9 @@ for (const slug of slugs) {
 // sitemap lastmod for articles
 const smPath = join(root, 'sitemap.xml');
 let sm = readFileSync(smPath, 'utf8');
-for (const { slug } of articles) {
+for (const { slug, modified } of articles) {
   const re = new RegExp(`(<loc>${SITE}/blog/${slug}/</loc>)<lastmod>[^<]*</lastmod>`);
-  sm = sm.replace(re, `$1<lastmod>${MODIFIED}</lastmod>`);
+  sm = sm.replace(re, `$1<lastmod>${modified}</lastmod>`);
 }
 writeFileSync(smPath, sm);
 
