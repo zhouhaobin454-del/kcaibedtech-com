@@ -27,7 +27,7 @@ const chair = (o) => ({
 
 export const skus = [
   frame({
-    model: 'KD010-A2', name: 'Disassembled Electric Bed Frame',
+    model: 'KD010-A2', carton: '1040 × 940 × 290 mm', loading: '248 sets per container (container type confirmed in the quotation)', name: 'Disassembled Electric Bed Frame',
     lead: 'A split-design electric bed frame: the lifting system is separate from the mattress, with backrest and leg rest adjustment.',
     structure: 'Disassembled (lifting system separate from mattress)', dims: '2000 × 900 mm', sizes: US_SIZES + ' (catalog nominal sizes)',
     angles: 'Backrest 0–60°; leg rest 0–40°', load: '200 kg', clearance: 'Floor clearance about 30 cm',
@@ -43,7 +43,7 @@ export const skus = [
     ],
   }),
   frame({
-    model: 'KD011-A3', name: 'Disassembled Electric Bed Frame with Frame',
+    model: 'KD011-A3', carton: '1030 × 930 × 210 mm', loading: '156 sets per container (container type confirmed in the quotation)', name: 'Disassembled Electric Bed Frame with Frame',
     lead: 'A split-design electric bed frame with a surround frame, listed in US-style bed sizes.',
     structure: 'Disassembled with surround frame', dims: '2000 × 900 mm', sizes: US_SIZES + ' (catalog nominal sizes)',
     angles: 'Backrest 0–60°; leg rest 0–40°', load: '200 kg', clearance: 'Floor clearance about 30 cm', materials: null,
@@ -57,7 +57,7 @@ export const skus = [
     ],
   }),
   frame({
-    model: 'KD001-A3', name: 'Fixed Electric Bed Frame',
+    model: 'KD001-A3', carton: '2000 × 900: 2050 × 950 × 200 mm; 2000 × 1100: 2050 × 1150 × 200 mm', weights: 'About 52 kg (2000 × 900) and 56.4 kg (2000 × 1100), carton included', loading: '146 sets in a 40-foot container', name: 'Fixed Electric Bed Frame',
     lead: 'A fixed-structure electric bed frame, listed in 2000 × 900 mm and 2000 × 1100 mm, with a padded sponge surface.',
     structure: 'Fixed', dims: '2000 × 900 mm; 2000 × 1100 mm', sizes: US_SIZES + ' (catalog nominal sizes)',
     angles: 'Backrest 0–60°; leg rest 0–40°', clearance: 'Floor clearance about 27 cm',
@@ -73,7 +73,7 @@ export const skus = [
   }),
 
   mattress({
-    model: 'KD004-B1', name: 'Electric Mattress',
+    model: 'KD004-B1', carton: '2050 × 950 × 310 mm', loading: '110 sets per container (container type confirmed in the quotation)', name: 'Electric Mattress',
     lead: 'A full-wrap electric mattress that sits on a compatible bed board, with independent backrest and leg rest lift.',
     structure: 'Full-wrap; placed on a bed board', dims: '2000 × 900 × 280 mm', sizes: US_SIZES + ' (catalog nominal sizes)',
     angles: 'Backrest 0–60°; leg rest 0–40°', motor: 'Two motors; German OKIN',
@@ -90,7 +90,7 @@ export const skus = [
     ],
   }),
   mattress({
-    model: 'KD003-B1', name: 'Electric Mattress',
+    model: 'KD003-B1', carton: '1520 × 1020 × 200 mm', loading: '95 sets per container (container type confirmed in the quotation)', name: 'Electric Mattress',
     lead: 'A split-design electric mattress (2000 × 1500 × 250 mm): the lifting system is separate from the mattress, with natural latex and two motors.',
     structure: 'Disassembled (lifting system separate from mattress)', dims: '2000 × 1500 × 250 mm', sizes: US_SIZES + ' (catalog nominal sizes)',
     angles: 'Backrest 0–60°; leg rest 0–40°', motor: 'Two motors; German OKIN', load: '300 kg', clearance: 'Floor clearance about 30 cm',
@@ -105,25 +105,33 @@ export const skus = [
   }),
 
   chair({
-    model: 'YJ001-A01', name: 'Yoga Chair A01',
+    model: 'YJ001-A01', carton: '1950 × 750 × 520 mm', weights: 'Net 58.1 kg; gross 66 kg (recent shipment)', name: 'Yoga Chair A01',
     lead: 'A powered zero-gravity yoga recliner with V-shaped lift support for the waist and a one-touch yoga mode.',
-    options: 'Dotted or striped stitching; catalog numbers YJ001-1 (technology leather) and YJ001-3 (top-grain half-leather)',
+    options: 'Technology leather with striped stitching (catalog YJ001-1); the top-grain half-leather dotted style is model A02',
+    materials: 'Technology leather, natural latex, high-density foam; high-quality steel',
     power: null, motor: 'Three motors (head / foot / leg); German OKIN',
     features: [
       ['Yoga-focused design', 'V-shaped lift supports the waist and gently compresses the abdomen.'],
       ['One-touch yoga mode', 'A single control moves the chair into the yoga position.'],
-      ['Three motors', 'Head, foot and leg motors; catalog series figures are backrest 0–60° and leg rest 0–45° (to be confirmed per version).'],
-      ['Material options', 'Technology leather or top-grain half-leather over natural latex and high-density foam.'],
-      ['Stitching options', 'Dotted or striped stitching.'],
+      ['Three motors', 'Head, foot and leg motors; backrest 0–60° and leg rest 0–45°.'],
+      ['Upholstery', 'Technology leather over natural latex and high-density foam. The top-grain half-leather version is model A02.'],
+      ['Striped stitching', 'Segmented striped stitching; the dotted (tufted) style is model A02.'],
       ['Optional functions', 'Vibration massage and USB; wireless remote and voice control.'],
     ],
   }),
   chair({
-    model: 'YJ001-A02', name: 'Yoga Chair A02 (model to be confirmed)',
-    lead: 'A yoga chair style listed by the factory whose model number and specification are still being confirmed. Contact us for the current status.',
-    structure: null, dims: null, angles: null, motor: null, control: null, clearance: null, power: null, materials: null, functions: null,
+    model: 'YJ001-A02', name: 'Yoga Chair A02',
+    lead: 'The top-grain half-leather version of the yoga recliner, with dotted (tufted) stitching and the same three-motor lift system and yoga functions as A01.',
+    options: 'Top-grain half-leather with dotted stitching (catalog YJ001-3)',
+    materials: 'Top-grain half-leather, natural latex, high-density foam; high-quality steel',
+    motor: 'Three motors (head / foot / leg); German OKIN', power: null,
     features: [
-      ['Model to be confirmed', 'This style is awaiting factory confirmation, so no specification is published for it yet.'],
+      ['Top-grain half-leather', 'Top-grain half-leather upholstery over natural latex and high-density foam.'],
+      ['Dotted stitching', 'Dotted (tufted) stitching; the striped technology-leather style is model A01.'],
+      ['Yoga-focused design', 'V-shaped lift supports the waist and gently compresses the abdomen.'],
+      ['One-touch yoga mode', 'A single control moves the chair into the yoga position.'],
+      ['Three motors', 'Head, foot and leg motors, the same as A01; backrest 0–60° and leg rest 0–45°.'],
+      ['Optional functions', 'Vibration massage and USB; wireless remote and voice control.'],
     ],
   }),
 ];
