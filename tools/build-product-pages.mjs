@@ -68,6 +68,7 @@ function specsOf(s) {
     ['Product size', s.dims], ['Available sizes', s.sizes && s.sizes !== s.dims ? s.sizes : null],
     ['Motor / drive', s.motor], ['Adjustment angles', s.angles], ['Load capacity', s.load], ['Floor clearance', s.clearance],
     ['Control options', s.control], ['Functions', s.functions], ['Materials', s.materials], ['Power', s.power],
+    ['Export carton', s.carton], ['Packed weight', s.weights], ['Container loading', s.loading],
     ['Styling options', s.options], ['Mattress pairing', s.cat === 'beds' ? `${m.model} (${m.dims})` : null],
     ['Paired bed frame', s.cat === 'mattresses' && s.pair ? `${s.pair} (2000 × ${byModel[s.pair].dims.match(/× (\d+)/)[1]} mm)` : null],
     ['Warranty', s.cat === 'chairs' ? `Motor: ${MOTOR_WARRANTY}` : `Motor: ${MOTOR_WARRANTY}; electric bed frame: ${FRAME_WARRANTY}`],
