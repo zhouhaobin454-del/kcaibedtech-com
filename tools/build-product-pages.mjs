@@ -64,6 +64,7 @@ function specsOf(s) {
     ['Control options', s.control], ['Functions', s.functions], ['Materials', s.materials], ['Power', s.power],
     ['Styling options', s.options], ['Mattress pairing', s.cat === 'beds' ? `${m.model} (${m.dims})` : null],
     ['Paired bed frame', s.cat === 'mattresses' && s.pair ? `${s.pair} (2000 × ${byModel[s.pair].dims.match(/× (\d+)/)[1]} mm)` : null],
+    ['Patents', /to be confirmed/i.test(s.name || '') ? null : '13 granted Chinese patents, shared across the range'],
     ['Application', 'Home, senior care, hotels and projects'], ['Customization', standard ? CUSTOM_STD : null],
   ];
   const needed = new Set(['Model', 'Product name', 'Structure', 'Product size', 'Customization', 'Application']);
@@ -196,7 +197,7 @@ function render(s) {
         <dl class="kc-pd-specs">
           ${specsOf(s).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${val(v)}</dd></div>`).join('\n          ')}
         </dl>
-${s.variants ? `        <h3 class="kc-pd-subhead">Size variants and packing</h3>
+${/to be confirmed/i.test(s.name || '') ? '' : '        <p class="kc-pd-disclaimer"><a class="kc-inline-link" href="/patents.html">View the patent certificates</a></p>\n'}${s.variants ? `        <h3 class="kc-pd-subhead">Size variants and packing</h3>
         <div class="kc-pd-table-wrap"><table class="kc-pd-table">
           <thead><tr><th scope="col">Size</th><th scope="col">Product size</th><th scope="col">Net weight</th><th scope="col">Gross weight</th><th scope="col">Carton size</th></tr></thead>
           <tbody>${s.variants.map((r) => `<tr>${r.map((c, i) => `<${i ? 'td' : 'th scope="row"'}>${esc(c)}</${i ? 'td' : 'th'}>`).join('')}</tr>`).join('')}</tbody>
