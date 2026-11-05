@@ -37,6 +37,12 @@ function featuresOf(s) {
   return out;
 }
 
+// Owner-confirmed 2026-11-05 (待补资料清单 reply)
+const MOQ_TEXT = 'From 20 pcs';
+const LEAD_TEXT = 'About 45 days; samples about 3 weeks';
+const MOTOR_WARRANTY = '2 years';
+const FRAME_WARRANTY = '5 years';
+
 function keySpecsOf(s) {
   if (s.cat === 'bases') return [['Structure', s.structure], ['Available sizes', s.sizes], ['Material', s.materials], ['OEM / ODM', OEM_SCOPE]];
   if (s.cat === 'beds') {
@@ -48,10 +54,10 @@ function keySpecsOf(s) {
 
 function snapshotOf(s) {
   const fmt = s.structure;
-  if (s.cat === 'bases') return [['MOQ', null], ['Lead time', null], ['Material', s.materials], ['Available sizes', s.sizes], ['Product format', fmt], ['OEM / ODM', OEM_SCOPE]];
+  if (s.cat === 'bases') return [['MOQ', MOQ_TEXT], ['Lead time', LEAD_TEXT], ['Material', s.materials], ['Available sizes', s.sizes], ['Product format', fmt], ['OEM / ODM', OEM_SCOPE]];
   const m = s.pair && byModel[s.pair];
   const format = s.cat === 'beds' ? `Upholstered frame + ${m.model} mattress` : fmt;
-  return [['MOQ', null], ['Lead time', null], ['Motor', s.cat === 'beds' ? null : s.motor], ['Motor warranty', null], ['Product format', format], ['OEM / ODM', OEM_SCOPE]];
+  return [['MOQ', MOQ_TEXT], ['Lead time', LEAD_TEXT], ['Motor', s.cat === 'beds' ? null : s.motor], ['Motor warranty', MOTOR_WARRANTY], ['Product format', format], ['OEM / ODM', OEM_SCOPE]];
 }
 
 function specsOf(s) {
@@ -64,6 +70,7 @@ function specsOf(s) {
     ['Control options', s.control], ['Functions', s.functions], ['Materials', s.materials], ['Power', s.power],
     ['Styling options', s.options], ['Mattress pairing', s.cat === 'beds' ? `${m.model} (${m.dims})` : null],
     ['Paired bed frame', s.cat === 'mattresses' && s.pair ? `${s.pair} (2000 × ${byModel[s.pair].dims.match(/× (\d+)/)[1]} mm)` : null],
+    ['Warranty', s.cat === 'chairs' ? `Motor: ${MOTOR_WARRANTY}` : `Motor: ${MOTOR_WARRANTY}; electric bed frame: ${FRAME_WARRANTY}`],
     ['Patents', /to be confirmed/i.test(s.name || '') ? null : '13 granted Chinese patents, shared across the range'],
     ['Application', 'Home, senior care, hotels and projects'], ['Customization', standard ? CUSTOM_STD : null],
   ];
