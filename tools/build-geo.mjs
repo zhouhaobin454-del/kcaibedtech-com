@@ -137,6 +137,7 @@ const lines = [
   '',
   '## Company and contact',
   `- [About](${SITE}/about.html)`,
+  `- [Patents](${SITE}/patents.html): 13 granted Chinese utility model and design patents, with certificates`,
   `- [Contact and inquiry form](${SITE}/contact.html)`,
   `- [News](${SITE}/news.html)`,
   '- WhatsApp: +86 190 6502 0180',
