@@ -186,7 +186,7 @@ export const geo = {
     ],
   },
   'how-adjustable-bed-frames-are-made': {
-    modified: '2026-11-04',
+    modified: '2026-11-05',
     takeaways: [
       'Board parts are cut on a CNC router run from a touchscreen with dust extraction; a panel saw handles straight cuts.',
       'Steel frames are assembled flat on a padded workbench, with brackets and linkage parts fastened by power tools.',
