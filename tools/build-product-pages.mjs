@@ -109,8 +109,8 @@ function relatedOf(s) {
 
 function render(s) {
   const pageUrl = `${SITE}${urlOf(s)}`;
-  const title = `${s.model} ${s.name} | OEM/ODM | Kang Cai`;
-  const desc = `${s.lead} OEM/ODM from Kang Cai, Dongguan, China.`;
+  const title = `${s.model} ${s.name} | Kang Cai`;
+  const desc = `${s.lead} OEM/ODM from Kang Cai.`;
   const faqs = faqOf(s);
   const ld = [{
     '@context': 'https://schema.org', '@type': 'Product', name: `${s.model} ${s.name}`, sku: s.model, description: s.lead,
