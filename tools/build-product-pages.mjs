@@ -117,7 +117,7 @@ function relatedOf(s) {
 
 function render(s) {
   const pageUrl = `${SITE}${urlOf(s)}`;
-  const title = `${s.model} ${s.name} | Kang Cai`;
+  const title = `${s.model} ${s.seo || s.name} | Kang Cai`;
   const desc = `${s.lead} OEM/ODM from Kang Cai.`;
   const faqs = faqOf(s);
   const ld = [{
@@ -298,6 +298,8 @@ function renderListing({ path, title, h1, intro, groups }) {
     <nav class="kc-container kc-pd-crumbs" aria-label="Breadcrumb">
       <a href="index.html">Home</a><span aria-hidden="true">›</span><a href="products.html">Products</a><span aria-hidden="true">›</span><span aria-current="page">${esc(h1)}</span>
     </nav>
+${groups.length > 1 ? `
+    <section class="kc-section" aria-labelledby="list-title"><div class="kc-container"><div class="kc-section-head"><div><p class="kc-kicker">${groups.reduce((n, g) => n + g.items.length, 0)} models</p><h1 id="list-title">${esc(h1)}</h1></div><p>${esc(intro)}</p></div></div></section>` : ''}
 ${groups.map((g, i) => `
     <section class="kc-section${i % 2 ? ' kc-section-soft' : ''}" aria-labelledby="list-${g.cat.slug}">
       <div class="kc-container">
@@ -325,16 +327,21 @@ ${groups.map((g, i) => `
 
 if (!only) {
   const groups = Object.values(CATS).map((cat) => ({ cat, items: all.filter((s) => s.catInfo === cat) }));
+  const LISTING_TITLES = {
+    'adjustable-bed-frames': 'Electric Adjustable Bed Frames for OEM/ODM | Kang Cai',
+    mattresses: 'Electric Adjustable Mattresses for OEM/ODM | Kang Cai',
+    'leisure-chairs': 'Electric Zero-Gravity Yoga Chairs for OEM/ODM | Kang Cai',
+  };
   const intros = {
-    'adjustable-bed-frames': 'Electric adjustable bed frames from Kang Cai: split and fixed designs for OEM and ODM programs.',
-    mattresses: 'Electric and adjustable mattresses from Kang Cai with independent backrest and leg rest lift.',
-    'leisure-chairs': 'Powered zero-gravity yoga chairs from Kang Cai for wellness, lifestyle and hospitality ranges.',
+    'adjustable-bed-frames': 'Electric adjustable bed frames and bases from Kang Cai in Dongguan: split and fixed designs for OEM and ODM programs.',
+    mattresses: 'Electric adjustable mattresses from Kang Cai with independent backrest and leg rest lift, for OEM and ODM mattress programs.',
+    'leisure-chairs': 'Electric zero-gravity yoga chairs from Kang Cai for wellness, lifestyle and hospitality ranges, available as OEM and ODM.',
   };
   for (const g of groups) {
     const dir = join(root, 'products', g.cat.slug);
-    writeFileSync(join(dir, 'index.html'), renderListing({ path: `/products/${g.cat.slug}/`, title: `${g.cat.label} | OEM/ODM | Kang Cai`, h1: g.cat.label, intro: intros[g.cat.slug], groups: [g] }));
+    writeFileSync(join(dir, 'index.html'), renderListing({ path: `/products/${g.cat.slug}/`, title: LISTING_TITLES[g.cat.slug], h1: g.cat.label, intro: intros[g.cat.slug], groups: [g] }));
     console.log('wrote', `products/${g.cat.slug}/index.html`);
   }
-  writeFileSync(join(root, 'products/all/index.html'), renderListing({ path: '/products/all/', title: 'All Products | OEM/ODM Smart Sleep | Kang Cai', h1: 'All Products', intro: 'All 7 Kang Cai models across adjustable bed frames, adjustable mattresses and leisure chairs.', groups }));
+  writeFileSync(join(root, 'products/all/index.html'), renderListing({ path: '/products/all/', title: 'All Models: Adjustable Bed Frames and Mattresses | Kang Cai', h1: 'All Kang Cai Models', intro: 'All 7 Kang Cai models across adjustable bed frames, adjustable mattresses and leisure chairs.', groups }));
   console.log('wrote products/all/index.html');
 }
