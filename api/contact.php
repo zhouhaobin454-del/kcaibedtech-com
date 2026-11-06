@@ -94,8 +94,6 @@ $body = implode("\n", [
 
 $headers = [
     'From: Kang Cai Website <info@kcaibedtech.com>',
-    // Transitional blind copy so no inquiry is lost while the new mailbox settles in; remove once info@ is confirmed reliable.
-    'Bcc: zhouhaobin454@gmail.com',
     'Reply-To: ' . $email,
     'Content-Type: text/plain; charset=UTF-8',
     'MIME-Version: 1.0',
