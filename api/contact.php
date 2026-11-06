@@ -93,7 +93,9 @@ $body = implode("\n", [
 ]);
 
 $headers = [
-    'From: Kang Cai Website <no-reply@kcaibedtech.com>',
+    'From: Kang Cai Website <info@kcaibedtech.com>',
+    // Transitional blind copy so no inquiry is lost while the new mailbox settles in; remove once info@ is confirmed reliable.
+    'Bcc: zhouhaobin454@gmail.com',
     'Reply-To: ' . $email,
     'Content-Type: text/plain; charset=UTF-8',
     'MIME-Version: 1.0',
@@ -111,7 +113,7 @@ if ($logDir !== '' && is_dir($logDir) && is_writable($logDir)) {
     $saved = $entry !== false && @file_put_contents($logDir . DIRECTORY_SEPARATOR . 'kangcai-inquiries.log', $entry . "\n", FILE_APPEND | LOCK_EX) !== false;
 }
 
-$sent = mail('zhouhaobin454@gmail.com', $subject, $body, implode("\r\n", $headers));
+$sent = mail('info@kcaibedtech.com', $subject, $body, implode("\r\n", $headers));
 if (!$sent && !$saved) {
     respond(500, ['ok' => false, 'message' => 'Email delivery failed.']);
 }

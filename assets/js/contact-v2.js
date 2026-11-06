@@ -38,7 +38,7 @@
       form.reset();
       setStatus('Thank you. Your inquiry has been sent to the Kang Cai team.', 'success');
     } catch (error) {
-      setStatus('We could not send the form. Please email zhouhaobin454@gmail.com or contact us on WhatsApp.', 'error');
+      setStatus('We could not send the form. Please email info@kcaibedtech.com or contact us on WhatsApp.', 'error');
     } finally {
       button.disabled = false;
     }
