@@ -26,8 +26,8 @@
   gap:4px;
   border:1px solid rgba(117,201,255,.24);
   border-radius:0 0 14px 14px;
-  background:rgba(10,44,102,.99);
-  box-shadow:0 22px 46px rgba(6,30,72,.38);
+  background:rgba(27,32,38,.99);
+  box-shadow:0 22px 46px rgba(20,24,28,.38);
   opacity:0;
   pointer-events:none;
   transform:translate(-50%,-8px);
@@ -48,7 +48,7 @@
   min-height:46px;
   padding:10px 14px;
   border-radius:8px;
-  color:#e7f2ff;
+  color:#f4f3f2;
   font-size:.96rem;
   white-space:nowrap;
 }

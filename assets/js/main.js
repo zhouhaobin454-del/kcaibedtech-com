@@ -4,3 +4,26 @@ const filters=[...document.querySelectorAll('[data-filter]')],cards=[...document
 const float=document.querySelector('[data-floating-contact]'),floatToggle=document.querySelector('[data-contact-toggle]');floatToggle?.addEventListener('click',()=>{const open=float.classList.toggle('open');floatToggle.setAttribute('aria-expanded',String(open))});
 const heroVideo=document.querySelector('.hero-video');if(heroVideo&&matchMedia('(prefers-reduced-motion: reduce)').matches){heroVideo.removeAttribute('autoplay');heroVideo.removeAttribute('loop');heroVideo.pause()}
 })();
+(()=>{const root=document.documentElement,header=document.querySelector('.site-header');
+if(header){const sync=()=>header.classList.toggle('is-scrolled',window.scrollY>24);sync();window.addEventListener('scroll',sync,{passive:true})}
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce&&'IntersectionObserver' in window){
+const sel='.kc-section-head,.kc-product-card,.kc-scenario-card,.kc-capability-intro,.kc-capability,.kc-process-card,.kc-category-row,.kc-fit-card,.kc-news-card,.kc-pd-feature,.kc-pd-steps li,.kc-proof-card,.kc-video-feature,.kc-truth-grid,.kc-story-copy,.kc-story-media,.kc-photo-grid figure';
+const below=[...document.querySelectorAll(sel)].filter(e=>e.getBoundingClientRect().top>window.innerHeight*.92);
+const counts=new Map();
+below.forEach(e=>{e.setAttribute('data-kc-reveal','');if(e.classList.contains('kc-story-media'))e.classList.add('kc-media-reveal');const n=counts.get(e.parentElement)||0;counts.set(e.parentElement,n+1);e.style.setProperty('--kc-delay',Math.min(n,4)*80+'ms')});
+root.classList.add('kc-reveal-on');
+const io=new IntersectionObserver(list=>list.forEach(en=>{if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+below.forEach(e=>io.observe(e))}
+const hero=document.querySelector('.kc-pd-hero'),cta=document.querySelector('.kc-pd-info .kc-btn-primary'),title=document.querySelector('.kc-pd-info h1');
+if(hero&&cta&&title&&'IntersectionObserver' in window){
+const bar=document.createElement('div');bar.className='kc-sticky-quote';bar.setAttribute('role','region');bar.setAttribute('aria-label','Quick inquiry');
+const label=document.createElement('div'),model=document.createElement('strong'),tag=document.createElement('span');
+model.textContent=title.textContent.trim().split(' ')[0];tag.textContent='B2B inquiry';label.append(model,tag);
+const link=cta.cloneNode(true);link.removeAttribute('id');bar.append(label,link);document.body.append(bar);
+const shown={hero:false,end:false};
+const update=()=>{const on=!shown.hero&&!shown.end;bar.classList.toggle('is-visible',on);document.body.classList.toggle('has-quote-bar',on)};
+new IntersectionObserver(l=>{shown.hero=l[0].isIntersecting||l[0].boundingClientRect.top>0;update()}).observe(hero);
+const ends=[...document.querySelectorAll('.kc-cta,.kc-cta-band,.kc-footer-shell')],seen=new Set();
+if(ends.length){const eo=new IntersectionObserver(l=>{l.forEach(en=>en.isIntersecting?seen.add(en.target):seen.delete(en.target));shown.end=seen.size>0;update()});ends.forEach(e=>eo.observe(e))}}
+})();
