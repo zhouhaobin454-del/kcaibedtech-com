@@ -108,6 +108,7 @@ export const geo = {
     ],
   },
   'split-king-or-king-frame-sizing': {
+    modified: '2026-11-06',
     takeaways: [
       'A King base is one platform that adjusts as a single unit; a Split King is two Twin XL bases side by side that adjust independently.',
       'Split King needs two motor systems and typically two Twin XL mattresses, and takes more shipping volume per bed.',
@@ -126,6 +127,8 @@ export const geo = {
     faq: [
       ['What is the difference between a King and a Split King adjustable base?', 'A King base is a single platform that adjusts as one unit. A Split King is two Twin XL adjustable bases side by side, each adjusting completely independently.'],
       ['Who buys Split King?', 'Mostly the premium residential market: couples whose sleeping preferences diverge, consumers with specific comfort requirements for one partner, and premium sleep or direct-to-consumer brands.'],
+      ['What is a split king adjustable bed?', 'A split king adjustable bed is two Twin XL adjustable bases placed side by side to fill a King-size space, so each side raises and lowers on its own.'],
+      ['Is a King size split adjustable bed frame one product or two?', 'Two. A King size split setup uses two Twin XL bases, each with its own motor system, and typically two Twin XL mattresses.'],
       ['What should I consider when procuring Split King?', 'Minimum order quantities, whether you need two Twin XL mattresses, the extra shipping volume per bed, and whether controls are independent, synchronized or hybrid.'],
     ],
   },

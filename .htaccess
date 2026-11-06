@@ -31,7 +31,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^blog/adjustable-bed-base-rfq-checklist-b2b-guide/?$ /blog/writing-an-adjustable-frame-rfq/ [R=301,L]
   RewriteRule ^blog/adjustable-bed-features-b2b-guide/?$ /blog/adjustable-bed-functions-for-buyers/ [R=301,L]
   RewriteRule ^blog/split-king-vs-king-adjustable-bed-bases/?$ /blog/split-king-or-king-frame-sizing/ [R=301,L]
-  RewriteRule ^blog/wall-hugger-adjustable-bed-base-b2b-guide/?$ /blog/zero-clearance-frame-buyer-notes/ [R=302,L]
+  RewriteRule ^blog/wall-hugger-adjustable-bed-base-b2b-guide/?$ /blog/zero-clearance-frame-buyer-notes/ [R=301,L]
   RewriteRule ^blog/why-are-adjustable-bed-bases-so-heavy/?$ /blog/why-adjustable-frames-weigh-so-much/ [R=301,L]
   RewriteRule ^blog/zero-clearance-adjustable-bed-base-b2b-guide/?$ /blog/zero-clearance-frame-buyer-notes/ [R=301,L]
 
@@ -54,7 +54,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^products/mattresses/(kd001-b1|kd001-b2|kd001-b3|kd002-b1|kd002-b2|kd004-b3|kd008-b1)/?$ /products/mattresses/ [R=302,L]
   RewriteRule ^products/(smart-beds|bed-bases)(/.*)?$ /products.html [R=302,L]
   RewriteRule ^blog/kr-series-smart-beds-canton-fair-2025/?$ /news.html [R=302,L]
-  RewriteRule ^blog/wall-hugger-frame-buyer-notes/?$ /blog/zero-clearance-frame-buyer-notes/ [R=302,L]
+  RewriteRule ^blog/wall-hugger-frame-buyer-notes/?$ /blog/zero-clearance-frame-buyer-notes/ [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>
