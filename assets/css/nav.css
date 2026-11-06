@@ -26,8 +26,8 @@
   gap:4px;
   border:1px solid rgba(117,201,255,.24);
   border-radius:0 0 14px 14px;
-  background:rgba(7,20,38,.99);
-  box-shadow:0 22px 46px rgba(0,9,22,.38);
+  background:rgba(10,44,102,.99);
+  box-shadow:0 22px 46px rgba(6,30,72,.38);
   opacity:0;
   pointer-events:none;
   transform:translate(-50%,-8px);
