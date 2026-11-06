@@ -8,7 +8,7 @@ import vm from 'node:vm';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const shellCode = readFileSync(join(root, 'assets/js/brand-shell.js'), 'utf8');
-const CSS_VERSION = '17';
+const CSS_VERSION = '18';
 const SKIP = new Set(['404.html', 'about/index.html', 'contact/index.html', 'privacy/index.html', 'products/index.html']);
 const LEGACY = /^(blog|faq|sourcing)\//;
 const SCRIPTLESS = new Set(['contact.html']); // pages that still need brand-shell.js (form prefill)
@@ -34,7 +34,12 @@ function walk(dir, acc = []) {
   return acc;
 }
 
-const cssLinks = (legacy) => ['styles', 'nav', 'phase-one', 'phase-two', ...(legacy ? ['legacy-gold'] : [])]
+const FONT_LINKS = [
+  '  <link rel="preconnect" href="https://fonts.googleapis.com">',
+  '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+  '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">',
+].join('\n');
+const cssLinks = (legacy) => FONT_LINKS + '\n' + ['styles', 'nav', 'phase-one', 'phase-two', ...(legacy ? ['legacy-gold'] : []), 'industrial']
   .map((n) => `  <link rel="stylesheet" href="/assets/css/${n}.css?v=${CSS_VERSION}">`).join('\n');
 
 let changed = 0;
@@ -49,7 +54,8 @@ for (const file of walk(root)) {
   const shell = renderShell(urlPath);
 
   // Head: one static, ordered stylesheet block.
-  html = html.replace(/^[ \t]*<link rel="stylesheet" href="[^"]*assets\/css\/(?:styles|nav|phase-one|phase-two|legacy-gold)\.css[^"]*">\n/gm, '');
+  html = html.replace(/^[ \t]*<link rel="stylesheet" href="[^"]*assets\/css\/(?:styles|nav|phase-one|phase-two|legacy-gold|industrial)\.css[^"]*">\n/gm, '');
+  html = html.replace(/^[ \t]*<link rel="(?:preconnect" href="https:\/\/fonts\.(?:googleapis|gstatic)\.com"(?: crossorigin)?|stylesheet" href="https:\/\/fonts\.googleapis\.com\/css2[^"]*")>\n/gm, '');
   html = html.replace('</head>', `${cssLinks(legacy)}\n</head>`);
 
   // Header, footer, floating contact.
@@ -60,7 +66,7 @@ for (const file of walk(root)) {
   // Scripts: CSS is static now; brand-shell is only needed where it fills form fields.
   html = html.replace(/[ \t]*<script src="[^"]*assets\/js\/site-config\.js[^"]*"><\/script>\n/g, '');
   if (!SCRIPTLESS.has(rel)) html = html.replace(/[ \t]*<script src="[^"]*assets\/js\/brand-shell\.js[^"]*"><\/script>\n/g, '');
-  if (!/assets\/js\/main\.js/.test(html)) html = html.replace('</body>', '  <script src="/assets/js/main.js" defer></script>\n</body>');
+  if (!/assets\/js\/main\.js/.test(html)) html = html.replace('</body>', '  <script src="/assets/js/main.js?v=18" defer></script>\n</body>');
 
   if (legacy && !html.includes('kc-legacy')) {
     html = html.replace(/<body([^>]*)>/, (m, attrs) => (/class="/.test(attrs)

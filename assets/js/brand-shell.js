@@ -16,7 +16,7 @@
       return `
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="/" aria-label="Kang Cai Smart Sleep home">
-          <span class="kc-mark" aria-hidden="true">KC</span><span>KANG CAI</span>
+          <img class="kc-logo" src="/assets/images/kangcai/logo-mark.webp" alt="" width="31" height="44" decoding="async"><span>KANG CAI</span>
         </a>
         <button class="mobile-toggle" data-menu-toggle aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation"><span></span><span></span><span></span></button>
         <div class="nav-links" id="primary-menu" data-nav-links>
@@ -32,7 +32,7 @@
       return `
       <div class="kc-container kc-footer-grid">
         <div class="kc-footer-intro">
-          <a class="footer-brand" href="/"><span class="kc-mark" aria-hidden="true">KC</span><span>KANG CAI</span></a>
+          <a class="footer-brand" href="/"><img class="kc-logo" src="/assets/images/kangcai/logo-mark.webp" alt="" width="31" height="44" decoding="async"><span>KANG CAI</span></a>
           <p>Adjustable sleep systems built for global brands, distributors and project buyers.</p>
           <p class="operator">Kang Cai Smart Sleep Co., Ltd.<br>Dongguan, Guangdong, China</p>
         </div>
