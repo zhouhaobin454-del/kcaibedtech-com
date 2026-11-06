@@ -167,3 +167,12 @@ body { overflow-x: clip; }
 .footer-brand .kc-logo { height: 64px; }
 @media (min-width: 801px) { .site-header.is-scrolled .brand .kc-logo { height: 42px; } }
 @media (max-width: 800px) { .brand .kc-logo { height: 42px; } }
+
+/* Analytics consent banner and footer link */
+.kc-cookie-banner { position: fixed; left: 24px; bottom: 24px; z-index: 1100; display: grid; gap: 14px; width: min(520px, calc(100% - 32px)); padding: 18px 20px; color: #fff; background: var(--kc-navy); border: 1px solid rgba(255,255,255,.18); border-top: 3px solid var(--kc-blue); }
+.kc-cookie-banner p { margin: 0; font-size: .88rem; line-height: 1.55; }
+.kc-cookie-banner a { color: var(--kc-gold); text-decoration: underline; }
+.kc-cookie-actions { display: flex; gap: 10px; }
+.kc-cookie-banner .kc-btn { flex: 1; min-height: 42px; padding: 8px 18px; }
+.kc-cookie-link { padding: 0; color: inherit; font: inherit; text-decoration: underline; background: none; border: 0; cursor: pointer; }
+@media (max-width: 800px) { .kc-cookie-banner { left: 16px; bottom: 16px; } }
