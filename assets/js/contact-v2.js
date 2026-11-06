@@ -36,6 +36,7 @@
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.ok) throw new Error(result.message || 'Submission failed');
       form.reset();
+      document.dispatchEvent(new CustomEvent('kc:lead', { detail: { productInterest: payload.productInterest || '' } }));
       setStatus('Thank you. Your inquiry has been sent to the Kang Cai team.', 'success');
     } catch (error) {
       setStatus('We could not send the form. Please email info@kcaibedtech.com or contact us on WhatsApp.', 'error');
