@@ -176,3 +176,20 @@ body { overflow-x: clip; }
 .kc-cookie-banner .kc-btn { flex: 1; min-height: 42px; padding: 8px 18px; }
 .kc-cookie-link { padding: 0; color: inherit; font: inherit; text-decoration: underline; background: none; border: 0; cursor: pointer; }
 @media (max-width: 800px) { .kc-cookie-banner { left: 16px; bottom: 16px; } }
+
+/* About: certifications; Products: smart integration */
+.kc-cert-groups { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.kc-cert-group h3 { margin: 0 0 12px; padding-top: 14px; border-top: 2px solid var(--kc-ink); font-family: var(--kc-mono); font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--kc-muted); }
+.kc-cert-group ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.kc-cert-group li { padding: 8px 12px; background: #fff; border: 1px solid #c9c3b6; font-size: .86rem; font-weight: 600; }
+.kc-smart-grid { grid-template-columns: repeat(3, 1fr); }
+.kc-smart-note { margin: 18px 0 0; color: var(--kc-muted); font-size: .8rem; }
+@media (max-width: 1050px) { .kc-cert-groups { grid-template-columns: 1fr 1fr; } .kc-smart-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .kc-cert-groups { grid-template-columns: 1fr; } }
+
+/* Home: company facts next to the factory video */
+.kc-facts { display: grid; grid-template-columns: 1fr 1fr; margin: 24px 0 0; border-top: 1px solid var(--kc-line); }
+.kc-facts div { padding: 14px 16px 14px 0; border-bottom: 1px solid var(--kc-line); }
+.kc-facts dt { font-family: var(--kc-mono); font-size: 1.5rem; font-weight: 500; color: var(--kc-ink); }
+.kc-facts dd { margin: 2px 0 0; color: var(--kc-muted); font-size: .84rem; }
+.kc-video-feature .kc-facts + .kc-actions { margin-top: 24px; }
