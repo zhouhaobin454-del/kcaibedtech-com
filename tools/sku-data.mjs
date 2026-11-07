@@ -36,7 +36,7 @@ export const skus = [
     features: [
       ['Split lifting design', 'The lifting system and the mattress are separate, so the base can be paired with compatible mattresses.'],
       ['Adjustment', 'Backrest lift 0–60° and leg rest lift 0–40° (catalog figures).'],
-      ['Strong structure', 'High-quality steel; the catalog states an endurance test of the lifting system of 10,000+ cycles.'],
+      ['Strong structure', 'High-quality steel; the lifting system has passed 10,000+ aging tests.'],
       ['Panel options', 'Eco multi-layer board (15 / 18 mm) or a high-strength honeycomb aluminum panel.'],
       ['Load rating', '200 kg listed; the test method is available on request.'],
       ['Motors', 'Two motors, German OKIN.'],
@@ -86,7 +86,7 @@ export const skus = [
       ['Mattress construction', 'Knitted fabric (three-in-one quilting), natural latex and high-density foam; configurable to customer requirements.'],
       ['Preset modes', 'Deep sleep, zero gravity, one-touch reset, anti-snore, vibration massage, reading and movie modes.'],
       ['Motors and control', 'Two motors, German OKIN. Optional wired or wireless remote, Sleepace app, voice and APP.'],
-      ['Durability', 'The catalog states an endurance test of the lifting system of 10,000+ cycles.'],
+      ['Durability', 'The lifting system has passed 10,000+ aging tests.'],
     ],
   }),
   mattress({
@@ -100,7 +100,7 @@ export const skus = [
       ['Two motors', 'Two German OKIN motors drive independent backrest and leg rest lift (0–60° / 0–40°).'],
       ['Natural latex comfort', 'Natural latex, suspended cotton / high-density foam and independent pocket springs.'],
       ['Load rating', '300 kg listed load rating (test method on request) with about 30 cm floor clearance.'],
-      ['Durability', 'The catalog states an endurance test of the lifting system of 10,000+ cycles.'],
+      ['Durability', 'The lifting system has passed 10,000+ aging tests.'],
     ],
   }),
 
