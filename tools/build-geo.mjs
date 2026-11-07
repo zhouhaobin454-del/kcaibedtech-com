@@ -137,6 +137,7 @@ const lines = [
   '',
   '## Company and contact',
   `- [About](${SITE}/about.html)`,
+  `- [Product catalog](${SITE}/catalog/): downloadable English PDF catalog (${SITE}/downloads/kang-cai-product-catalog.pdf)`,
   `- [Patents](${SITE}/patents.html): 13 granted Chinese utility model and design patents, with certificates (9 held by the company, 4 by the inventor)`,
   `- [Contact and inquiry form](${SITE}/contact.html)`,
   `- [News](${SITE}/news.html)`,
