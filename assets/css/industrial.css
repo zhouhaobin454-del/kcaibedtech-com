@@ -193,3 +193,17 @@ body { overflow-x: clip; }
 .kc-facts dt { font-family: var(--kc-mono); font-size: 1.5rem; font-weight: 500; color: var(--kc-ink); }
 .kc-facts dd { margin: 2px 0 0; color: var(--kc-muted); font-size: .84rem; }
 .kc-video-feature .kc-facts + .kc-actions { margin-top: 24px; }
+
+/* Catalog download page */
+.kc-catalog-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+.kc-catalog-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--kc-line); }
+.kc-catalog-list li { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--kc-line); }
+.kc-catalog-list strong { font-family: var(--kc-display); font-size: 1.25rem; letter-spacing: .02em; text-transform: uppercase; color: var(--kc-ink); }
+.kc-catalog-list span { color: var(--kc-muted); }
+.kc-catalog-preview { margin: 0; border: 1px solid var(--kc-line); background: #fff; }
+.kc-catalog-preview img { display: block; width: 100%; height: auto; }
+.kc-catalog-preview figcaption { padding: 10px 14px; color: var(--kc-muted); font-size: .84rem; border-top: 1px solid var(--kc-line); }
+.kc-catalog-note { margin: 28px 0 0; max-width: 70ch; color: var(--kc-muted); font-size: .9rem; }
+@media (max-width: 860px) { .kc-catalog-grid { grid-template-columns: 1fr; gap: 28px; } }
+.kc-catalog .kc-subhero > img { object-fit: contain; object-position: right center; }
+@media (max-width: 860px) { .kc-catalog .kc-subhero > img { object-fit: cover; object-position: center; opacity: .55; } }

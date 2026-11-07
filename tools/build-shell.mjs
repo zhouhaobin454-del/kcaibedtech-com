@@ -68,7 +68,8 @@ for (const file of walk(root)) {
   if (!SCRIPTLESS.has(rel)) html = html.replace(/[ \t]*<script src="[^"]*assets\/js\/brand-shell\.js[^"]*"><\/script>\n/g, '');
   if (!/assets\/js\/main\.js/.test(html)) html = html.replace('</body>', '  <script src="/assets/js/main.js?v=18" defer></script>\n</body>');
   html = html.replace(/(assets\/js\/(?:main|site-config)\.js)"/g, `$1?v=${CSS_VERSION}"`);
-  if (!/assets\/js\/analytics\.js/.test(html)) html = html.replace('</body>', '  <script src="/assets/js/analytics.js?v=1" defer></script>\n</body>');
+  if (!/assets\/js\/analytics\.js/.test(html)) html = html.replace('</body>', '  <script src="/assets/js/analytics.js?v=2" defer></script>\n</body>');
+  html = html.replace(/(assets\/js\/analytics\.js)\?v=\d+/g, '$1?v=2');
 
   if (legacy && !html.includes('kc-legacy')) {
     html = html.replace(/<body([^>]*)>/, (m, attrs) => (/class="/.test(attrs)

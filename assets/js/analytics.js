@@ -70,7 +70,8 @@
     const link = event.target.closest('a[href]');
     if (!link) return;
     const href = link.getAttribute('href') || '';
-    if (/wa\.me\//.test(href)) track('click_whatsapp', { link_location: location.pathname });
+    if (link.hasAttribute('data-catalog-download')) track('catalog_download', { link_location: location.pathname });
+    else if (/wa\.me\//.test(href)) track('click_whatsapp', { link_location: location.pathname });
     else if (href.startsWith('mailto:')) track('click_email', { link_location: location.pathname });
     else if (href.startsWith('tel:')) track('click_phone', { link_location: location.pathname });
     else if (/contact\.html/.test(href) && link.matches('.kc-btn, .btn')) track('click_quote_cta', { link_location: location.pathname, link_text: (link.textContent || '').trim().slice(0, 40) });

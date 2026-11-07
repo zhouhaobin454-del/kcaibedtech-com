@@ -233,7 +233,7 @@ ${/to be confirmed/i.test(s.name || '') ? '' : '        <p class="kc-pd-disclaim
     </section>
 
     <section class="kc-cta">
-      <div class="kc-container"><p class="kc-kicker">Build Your Program</p><h2>Build your ${esc(s.model)} B2B program</h2><p>Share your market, size, quantity and control requirements. We can confirm the ${esc(s.model)} specification before quotation.</p><div class="kc-actions"><a class="kc-btn kc-btn-primary" href="${quoteUrl(s)}">Request a ${esc(s.model)} B2B Quote</a><a class="kc-btn kc-btn-secondary" href="${WA}" target="_blank" rel="noopener">Contact on WhatsApp</a></div></div>
+      <div class="kc-container"><p class="kc-kicker">Build Your Program</p><h2>Build your ${esc(s.model)} B2B program</h2><p>Share your market, size, quantity and control requirements. We can confirm the ${esc(s.model)} specification before quotation.</p><div class="kc-actions"><a class="kc-btn kc-btn-primary" href="${quoteUrl(s)}">Request a ${esc(s.model)} B2B Quote</a><a class="kc-btn kc-btn-secondary" href="${WA}" target="_blank" rel="noopener">Contact on WhatsApp</a><a class="kc-btn kc-btn-secondary" href="/downloads/kang-cai-product-catalog.pdf" download data-catalog-download>Download Catalog (PDF)</a></div></div>
     </section>
 
     <section class="kc-section" aria-labelledby="pd-related-title">
@@ -311,7 +311,7 @@ ${groups.map((g, i) => `
     </section>`).join('\n')}
 
     <section class="kc-cta">
-      <div class="kc-container"><p class="kc-kicker">Need Product Selection Support?</p><h2>Tell us what you sell and where you sell it.</h2><p>Kang Cai can suggest a starting platform before detailed model and configuration review.</p><div class="kc-actions"><a class="kc-btn kc-btn-primary" href="contact.html?interest=Product%20Selection%20Support#inquiry-form">Ask for Product Guidance</a><a class="kc-btn kc-btn-secondary" href="${WA}" target="_blank" rel="noopener">Contact on WhatsApp</a></div></div>
+      <div class="kc-container"><p class="kc-kicker">Need Product Selection Support?</p><h2>Tell us what you sell and where you sell it.</h2><p>Kang Cai can suggest a starting platform before detailed model and configuration review.</p><div class="kc-actions"><a class="kc-btn kc-btn-primary" href="contact.html?interest=Product%20Selection%20Support#inquiry-form">Ask for Product Guidance</a><a class="kc-btn kc-btn-secondary" href="${WA}" target="_blank" rel="noopener">Contact on WhatsApp</a><a class="kc-btn kc-btn-secondary" href="/downloads/kang-cai-product-catalog.pdf" download data-catalog-download>Download Catalog (PDF)</a></div></div>
     </section>
   </main>
 
