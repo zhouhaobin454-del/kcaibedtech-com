@@ -53,7 +53,7 @@ $phone = $clean('phone', 50);
 $message = $clean('message', 3000, true);
 $consent = (bool)($data['privacyAgreement'] ?? false);
 
-$allowedInterests = ['Adjustable Bed Frames', 'Smart Beds', 'Adjustable Mattresses', 'Leisure Chairs', 'Bed Bases', 'OEM / ODM Project'];
+$allowedInterests = ['Adjustable Bed Frames', 'Smart Beds', 'Adjustable Mattresses', 'Leisure Chairs', 'Bed Bases', 'Product Selection Support', 'OEM / ODM Project'];
 $length = static fn(string $value): int => function_exists('mb_strlen') ? mb_strlen($value) : strlen($value);
 if ($length($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL) || $length($company) < 2 || $country === '' || !in_array($interest, $allowedInterests, true) || $length($message) < 10 || !$consent) {
     respond(422, ['ok' => false, 'message' => 'Please check the required fields.']);

@@ -69,6 +69,7 @@
       <option>Adjustable Bed Frames</option>
       <option>Adjustable Mattresses</option>
       <option>Leisure Chairs</option>
+      <option>Product Selection Support</option>
       <option>OEM / ODM Project</option>`;
     const requestedInterest = new URLSearchParams(location.search).get('interest');
     if (requestedInterest && [...interest.options].some((option) => option.value === requestedInterest)) {
