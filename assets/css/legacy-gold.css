@@ -66,6 +66,7 @@
 .kc-legacy .article-layout { display: grid; grid-template-columns: minmax(0, 800px) 280px; gap: 64px; align-items: start; padding-bottom: 48px; }
 .kc-legacy .blog-hero-img { margin: 12px 0 28px; overflow: hidden; background: #fff; border: 1px solid var(--kc-line); border-radius: 18px; }
 .kc-legacy .blog-hero-img img, .kc-legacy .blog-img { display: block; width: 100%; height: auto; max-height: 440px; object-fit: cover; }
+.kc-legacy .blog-content .blog-img-portrait { width: auto; max-width: 100%; max-height: 680px; margin: 20px auto; object-fit: contain; }
 .kc-legacy .article-quick-answer { margin: 0 0 28px; padding: 20px 24px; background: var(--kc-cream); border-left: 4px solid var(--kc-accent-ink); border-radius: 10px; }
 .kc-legacy .quick-answer-label, .kc-legacy .toc-label { color: #cfa04d; font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .kc-legacy .article-quick-answer p { margin: 6px 0 0; color: var(--kc-ink); }
